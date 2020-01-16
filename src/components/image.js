@@ -1,6 +1,6 @@
-import { graphql, StaticQuery } from "gatsby";
-import Img from "gatsby-image";
-import React from "react";
+import { graphql, StaticQuery } from "gatsby"
+import Img from "gatsby-image"
+import React from "react"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -13,9 +13,7 @@ import React from "react";
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-
-
-const Image = (props) => (
+const Image = props => (
   <StaticQuery
     query={graphql`
       query {
@@ -34,24 +32,18 @@ const Image = (props) => (
         }
       }
     `}
-
-    render={(data) => {
+    render={data => {
       const image = data.images.edges.find(n => {
-        return n.node.relativePath.includes(props.filename);
-      });
-      if (!image) { return null; }
+        return n.node.relativePath.includes(props.filename)
+      })
+      if (!image) {
+        return null
+      }
 
-      const imageSizes = image.node.childImageSharp.sizes;
-      return (
-        <Img
-          alt={props.alt}
-          sizes={imageSizes}
-        />
-      );
+      const imageSizes = image.node.childImageSharp.sizes
+      return <Img alt={props.alt} sizes={imageSizes} />
     }}
   />
 )
 
-
-
-export default Image;
+export default Image
