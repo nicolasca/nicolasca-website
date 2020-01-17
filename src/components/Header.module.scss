@@ -1,0 +1,23 @@
+.Header {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  color: #0F2347;
+  background-color: #80C271;
+  height: 100%
+}
+
+.Logo {
+  margin-bottom: 2rem;;
+}
+
+.Menu {
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    padding: 0.5rem
+  }
+}

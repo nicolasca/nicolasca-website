@@ -32,5 +32,6 @@ module.exports = {
         basePath: `/blog`,
       },
     },
+    `gatsby-plugin-sass`
   ],
 }
