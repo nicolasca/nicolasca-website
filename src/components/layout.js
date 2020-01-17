@@ -5,12 +5,11 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import { graphql, useStaticQuery } from "gatsby";
-import PropTypes from "prop-types";
-import React from "react";
-import "../styles/global.css";
-import Header from './header';
-
+import { graphql, useStaticQuery } from "gatsby"
+import PropTypes from "prop-types"
+import React from "react"
+import "../styles/global.css"
+import Header from "./header"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,30 +23,35 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div style={{
-      position: 'relative'
-    }}>
-      <div style={{
-        width: '320px',
-        maxWidth: '400px',
-        position: 'fixed',
-        height: '100vh',
-      }}>
-        <Header siteTitle={data.site.siteMetadata.title} />
-
-      </div>
+    <div
+      style={{
+        position: "relative",
+        display: "flex",
+      }}
+    >
       <div
         style={{
+          minWidth: "300px",
+          maxWidth: "300px",
+          position: "fixed",
+          height: "100vh",
+        }}
+      >
+        <Header siteTitle={data.site.siteMetadata.title} />
+      </div>
+      <main
+        style={{
+          marginLeft: "300px",
+          height: "100vh",
+          width: "calc(100vw - 300px)",
           display: "flex",
-          justifyContent: "center",
-          margin: `0 auto`,
-          maxWidth: 1360,
-          padding: `0px 1.0875rem 1.45rem`,
+          flexDirection: "column",
+          alignItems: "center",
           paddingTop: 0,
         }}
       >
-        <main>{children}</main>
-      </div>
+        {children}
+      </main>
     </div>
   )
 }

@@ -18,7 +18,7 @@ const Header = ({ siteTitle }) => (
         >
           <div style={{ width: "70px" }}>
             {/* <img src={svg} alt="" style={{ width: "100%" }} /> */}
-            <Image filename="goat-logo.png" />
+            {/* <Image filename="goat-logo.png" /> */}
           </div>
           {siteTitle}
         </Link>
@@ -27,7 +27,7 @@ const Header = ({ siteTitle }) => (
     </div>
     <div className={styles.Menu}>
       <div>
-        <Link to="/about/">About</Link>
+        <Link to="/map/">Map</Link>
       </div>
     </div>
   </header >
