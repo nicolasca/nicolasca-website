@@ -1,0 +1,40 @@
+.Home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+.Home > * {
+  margin: 1rem;
+  padding: -1rem;
+}
+
+.Motivation {
+}
+
+.Title {
+  display: flex;
+  align-items: center;
+}
+
+.Experience {
+  a {
+    color: #c90000;
+  }
+  a:hover {
+    color: white;
+    background-color: #c90000;
+  }
+}
+
+.Education {
+}
+
+.Skills {
+  display: flex;
+  flex-direction: column;
+}
+
+.Home img {
+  max-width: 200px;
+}
