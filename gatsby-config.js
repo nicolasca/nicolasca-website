@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Goatland`,
+    title: `nicolasky`,
     description: `Nope.`,
     author: `@nicolasca`,
   },
@@ -32,6 +32,6 @@ module.exports = {
         basePath: `/blog`,
       },
     },
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
   ],
 }

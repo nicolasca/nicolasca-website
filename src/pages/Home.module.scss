@@ -1,12 +1,23 @@
 .Home {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .Home > * {
   margin: 1rem;
   padding: -1rem;
+}
+
+.Face {
+  max-width: 300px;
+}
+
+.Face:hover {
+  cursor: pointer;
+  .Lips {
+    fill: #d1162f;
+    transition: fill 0.5s ease;
+  }
 }
 
 .Motivation {
@@ -35,6 +46,6 @@
   flex-direction: column;
 }
 
-.Home img {
-  max-width: 200px;
-}
+// .Home img {
+//   max-width: 200px;
+// }
