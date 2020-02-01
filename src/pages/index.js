@@ -1,96 +1,84 @@
 import React from "react"
-import { graphql } from "gatsby"
-import ExperienceItem from "../components/ExperienceItem"
+import "./index.scss"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "./Home.scss"
-import Icon from "../images/nicolas.svg"
+import Rocket from "../images/rocket.svg"
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO title="Accueil" />
-    <div className="Home">
-      <div className="Title">
-        <Icon />
+const IndexPage = () => {
+  const distanceMercure = 58
+  const distanceVenus = 108
+  const distanceEarth = 150
+  const distanceMars = 228
+  const distanceJupiter = 778
+  // const distanceSaturne = 1427
+  // const distanceUranus = 2869
 
+  // const distanceNeptune = 4497
+
+  const systemSolarPixel = 600
+  const systemSolarDistance = distanceMars
+  const mercurePixel =
+    (systemSolarPixel * distanceMercure) / systemSolarDistance
+  const venusPixel = (systemSolarPixel * distanceVenus) / systemSolarDistance
+  const earthPixel = (systemSolarPixel * distanceEarth) / systemSolarDistance
+  const marsPixel = (systemSolarPixel * distanceMars) / systemSolarDistance
+  const jupiterPixel =
+    (systemSolarPixel * distanceJupiter) / systemSolarDistance
+
+  console.log("mercure", mercurePixel)
+  console.log("mars", marsPixel)
+  console.log("venus", venusPixel)
+
+  return (
+    <Layout>
+      <SEO title="Accueil" />
+      <div className="Home">
         <div>
-          <h1>Nicolas Castejon</h1>
-          <h2>Développeur frontend</h2>
+          <h1>Système solaire </h1>
+        </div>
+        <div
+          className="SolarSystem"
+          style={{
+            width: systemSolarPixel + "px",
+            height: systemSolarPixel + "px",
+          }}
+        >
+          <div className="Sun Planet"></div>
+          <div className="Mercure Planet"></div>
+          <div className="Venus Planet"></div>
+          <div className="Earth Planet"></div>
+          <div className="Mars Planet"></div>
+          <SVGEllipsis distancePixel={mercurePixel} />
+          <SVGEllipsis distancePixel={venusPixel} />
+          <SVGEllipsis distancePixel={earthPixel} />
+          <SVGEllipsis distancePixel={marsPixel} />
+          {/* <SVGEllipsis distancePixel={jupiterPixel} /> */}
+        </div>
+
+        <div className="Rocket">
+          <Rocket />
         </div>
       </div>
-
-      {/* <div className={css.Motivation}>
-        <p>Ce que je recherche</p>
-      </div> */}
-
-      <div className="Skills">
-        <h2>Compétences</h2>
-        <div>
-          <p>HTML, CSS, Javascript</p>
-          <p>Frameworks & libs: Angular 2, ReactJS</p>
-        </div>
-      </div>
-
-      <div className="Experience">
-        <h2>Expériences</h2>
-        <ExperienceItem
-          title="Métropole de lyon"
-          link="https://data.grandlyon.com"
-          linkTitle="data.grandlyon.com"
-          time="2018 - 2020"
-          description="Refonte du portail Open Data de la Métropole de Lyon"
-          technologies="Angular 8, Bulma, Mapbox GL JS, Docker, NestJS, Gitlab CI"
-        ></ExperienceItem>
-
-        <div>
-          <h3>Voyage</h3>
-          <p>2015 - 2016</p>
-          <p>Voyage en sac à dos en Asie et Amérique du Sud.</p>
-          <p>Escales de 3 mois à Perth (Australie) et 6 mois à São Paulo</p>
-        </div>
-
-        <ExperienceItem
-          title="Fruition Sciences"
-          link="https://fruitionsciences.com/fr/home"
-          linkTitle="fruitionsciences.com"
-          time="2013 - 2015"
-          description="Création de l'application mobile sur iOS. Maintenance du site web"
-          technologies="Ionic, Phonegap, Openlayers, PHP"
-        ></ExperienceItem>
-
-        <ExperienceItem
-          title="Première expérience: Capgemini"
-          time="2011 - 2012"
-          description="Application bancaire pour une demande de crédit"
-          technologies="Java, Spring, SOAP"
-        ></ExperienceItem>
-      </div>
-
-      <div className="Education">
-        <h2>Formation</h2>
-        <div>
-          <h3>Master en Informatique - 2010</h3>
-          <p>Université de Montpellier</p>
-        </div>
-        <div>
-          <h3>Master en Biologie - 2008</h3>
-          <p>Université de Lyon</p>
-        </div>
-      </div>
-    </div>
-  </Layout>
-)
+    </Layout>
+  )
+}
 
 export default IndexPage
 
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "nicolas.jpg" }) {
-      childImageSharp {
-        fixed(width: 250, height: 250) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`
+export const SVGEllipsis = ({ distancePixel }) => {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      className="Ellipsis"
+      style={{
+        height: distancePixel + "px",
+        width: distancePixel + "px",
+        top: `calc(50% - (${distancePixel}px / 2))`,
+        right: `calc(50% - (${distancePixel}px / 2))`,
+      }}
+    >
+      <circle cx="50%" cy="50%" r="49" stroke-width="1px" />
+    </svg>
+  )
+}

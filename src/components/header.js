@@ -11,16 +11,17 @@ const Header = ({ siteTitle }) => (
           margin: 0,
         }}
       >
-        <div style={{ width: "70px" }}>
-          {/* <img src={svg} alt="" style={{ width: "100%" }} /> */}
-          {/* <Image filename="goat-logo.png" /> */}
-        </div>
         {siteTitle}
       </p>
     </div>
     <div className={styles.Menu}>
       <div>
         <Link to="/" activeStyle={{ textDecoration: "underline" }}>
+          Accueil
+        </Link>
+      </div>
+      <div>
+        <Link to="/resume" activeStyle={{ textDecoration: "underline" }}>
           CV
         </Link>
       </div>

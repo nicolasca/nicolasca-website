@@ -1,0 +1,135 @@
+$distance-mercure: 58;
+$distance-venus: 108;
+$distance-earth: 150;
+$distance-mars: 228;
+$distance-jupiter: 778;
+$distance-saturne: 1 427;
+$distance-uranus: 2 869;
+$neptune: 4 497;
+
+$rotation-mars: 687;
+$rotation-earth: 365;
+$rotation-venus: 225;
+$rotation-mercure: 88;
+
+$system-solor-size: 600px;
+
+.Home {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.SolarSystem {
+  position: relative;
+}
+
+.SolarSystem .Planet {
+  position: absolute;
+  top: calc(50% - 10px);
+  right: calc(50% - 10px);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.SolarSystem .Sun {
+  width: 30px;
+  height: 30px;
+  top: calc(50% - 15px);
+  right: calc(50% - 15px);
+  background-color: yellow;
+}
+
+.SolarSystem .Earth {
+  background-color: blue;
+  border: 1px solid black;
+  animation: rotEarth 16s infinite linear;
+  z-index: 2;
+}
+
+@keyframes rotEarth {
+  from {
+    transform: rotate(0deg) translate(-195px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(-195px) rotate(-360deg);
+  }
+}
+
+.SolarSystem .Mercure {
+  background-color: grey;
+  border: 1px solid black;
+  animation: rotMercure 3.8s infinite linear;
+  z-index: 2;
+}
+
+@keyframes rotMercure {
+  from {
+    transform: rotate(0deg) translate(-75px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(-75px) rotate(-360deg);
+  }
+}
+
+.SolarSystem .Venus {
+  background-color: rgb(170, 154, 13);
+  border: 1px solid black;
+  animation: rotVenus 9.8s infinite linear;
+  z-index: 2;
+}
+
+@keyframes rotVenus {
+  from {
+    transform: rotate(0deg) translate(-142px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(-142px) rotate(-360deg);
+  }
+}
+
+.SolarSystem .Mars {
+  background-color: rgb(207, 95, 4);
+  border: 1px solid black;
+  animation: rotMars 30s infinite linear;
+  z-index: 2;
+}
+
+@keyframes rotMars {
+  from {
+    transform: rotate(0deg) translate(-295px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translate(-295px) rotate(-360deg);
+  }
+}
+
+.SolarSystem .Ellipsis {
+  position: absolute;
+  fill: transparent;
+  stroke: black;
+}
+
+.Rocket {
+  max-width: 50px;
+  position: absolute;
+  right: 10px;
+  animation: rocketMove 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+}
+
+@keyframes rocketMove {
+  0% {
+    bottom: 0%;
+  }
+
+  100% {
+    bottom: 120%;
+  }
+}
