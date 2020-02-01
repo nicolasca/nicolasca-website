@@ -34,7 +34,7 @@ const Map = () => {
       <>
         <strong>Muang Ngoi, Laos</strong>
         <p>
-          <img style={{ maxWidth: "600px" }} src="/nong-khiaw.jpg" alt="" />
+          <img style={{ maxWidth: "600px" }} src="/muang-ngoi.jpg" alt="" />
         </p>
       </>
     )
@@ -102,7 +102,7 @@ const Map = () => {
           source: "places",
           layout: {
             "icon-image": "{icon}-15",
-            "icon-size": 1.5,
+            "icon-size": 1.2,
             "icon-allow-overlap": true,
           },
         })
@@ -110,7 +110,7 @@ const Map = () => {
         map.resize()
 
         map.on("click", e => {
-          console.log(e.lngLat)
+          // console.log(e.lngLat)
         })
 
         map.on("click", "places", e => {
