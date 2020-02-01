@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.27",
+    "@mapbox/mapbox-gl-geocoder": "^4.5.1",
     "@mdx-js/react": "^1.5.4",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
@@ -27,7 +28,8 @@
     "react-map-gl": "^5.2.1",
     "theme-ui": "^0.2.52",
     "typeface-alegreya": "0.0.69",
-    "typeface-audiowide": "0.0.72"
+    "typeface-audiowide": "0.0.72",
+    "typeface-berkshire-swash": "0.0.72"
   },
   "devDependencies": {
     "prettier": "^1.19.1"

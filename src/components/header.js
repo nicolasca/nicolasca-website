@@ -6,7 +6,7 @@ import styles from "./Header.module.scss"
 const Header = ({ siteTitle }) => (
   <header className={styles.Header}>
     <div className={styles.Logo}>
-      <h1
+      <p
         style={{
           margin: 0,
         }}
@@ -16,14 +16,18 @@ const Header = ({ siteTitle }) => (
           {/* <Image filename="goat-logo.png" /> */}
         </div>
         {siteTitle}
-      </h1>
+      </p>
     </div>
     <div className={styles.Menu}>
       <div>
-        <Link to="/">CV</Link>
+        <Link to="/" activeStyle={{ textDecoration: "underline" }}>
+          CV
+        </Link>
       </div>
       <div>
-        <Link to="/map/">Voyage</Link>
+        <Link to="/map/" activeStyle={{ textDecoration: "underline" }}>
+          Voyage
+        </Link>
       </div>
     </div>
   </header>

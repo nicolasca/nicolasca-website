@@ -7,13 +7,17 @@
   background-color: black;
   height: 100%;
 
+  p,
   a {
-    font-family: "Audiowide";
+    font-family: "Berkshire Swash";
   }
 }
 
 .Logo {
   margin-bottom: 2rem;
+  p {
+    font-size: 2rem;
+  }
 }
 
 .Menu {

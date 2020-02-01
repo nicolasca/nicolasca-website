@@ -1,9 +1,11 @@
 import React from "react"
 import mapboxgl from "mapbox-gl"
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import "./Map.scss"
 import "../styles/mapbox-gl.css"
+import "../styles/mapbox-geocoder.css"
 import { useState, useEffect, useRef } from "react"
 import ReactDOMServer from "react-dom/server"
 
@@ -13,30 +15,63 @@ const Map = () => {
 
   useEffect(() => {
     const birmanie = ReactDOMServer.renderToStaticMarkup(
-      <>
-        <strong>Mingun, Birmanie</strong>
-        <p>
-          <img style={{ maxWidth: "600px" }} src="/birmanie.jpg" alt="" />
-        </p>
-      </>
+      <PopupContent title={"Mingun, Birmanie"} image={"/birmanie.jpg"} />
     )
 
     const indonesie = ReactDOMServer.renderToStaticMarkup(
-      <>
-        <strong>Lombok, Indonésie</strong>
-        <p>
-          <img style={{ maxWidth: "600px" }} src="/indonesie.jpg" alt="" />
-        </p>
-      </>
+      <PopupContent title={"Lombok, Indonésie"} image={"/indonesie.jpg"} />
     )
 
-    const muangNgoi = ReactDOMServer.renderToStaticMarkup(
-      <>
-        <strong>Muang Ngoi, Laos</strong>
-        <p>
-          <img style={{ maxWidth: "600px" }} src="/muang-ngoi.jpg" alt="" />
-        </p>
-      </>
+    const laos = ReactDOMServer.renderToStaticMarkup(
+      <PopupContent title={"Muang Ngoi, Laos"} image={"/muang-ngoi.jpg"} />
+    )
+
+    const australie = ReactDOMServer.renderToStaticMarkup(
+      <PopupContent title={"Perth, Australie"} image={"/australie.jpg"} />
+    )
+
+    const yangoon = ReactDOMServer.renderToStaticMarkup(
+      <PopupContent title={"Yangoon, Birmanie"} image={"/yangoon.jpg"} />
+    )
+
+    const valparaiso = ReactDOMServer.renderToStaticMarkup(
+      <PopupContent title={"Valparaíso, Chili"} image={"/valparaiso.jpg"} />
+    )
+
+    const uyuni = ReactDOMServer.renderToStaticMarkup(
+      <PopupContent title={"Salar de Uyuni, Bolivie"} image={"/uyuni.jpg"} />
+    )
+
+    const mekong = ReactDOMServer.renderToStaticMarkup(
+      <PopupContent title={"Mekong, Laos"} image={"/mekong.jpg"} />
+    )
+
+    const kyoto = ReactDOMServer.renderToStaticMarkup(
+      <PopupContent title={"Kyoto, Japon"} image={"/kyoto.jpg"} />
+    )
+
+    const kamaguchi = ReactDOMServer.renderToStaticMarkup(
+      <PopupContent title={"Lac Kawaguchi, Japon"} image={"/kawaguchi.jpg"} />
+    )
+
+    const santiago = ReactDOMServer.renderToStaticMarkup(
+      <PopupContent title={"Santiago, Chili"} image={"/santiago.jpg"} />
+    )
+
+    const machuPicchu = ReactDOMServer.renderToStaticMarkup(
+      <PopupContent title={"Machu Picchu, Pérou"} image={"/machuPicchu.jpg"} />
+    )
+
+    const kissamos = ReactDOMServer.renderToStaticMarkup(
+      <PopupContent title={"Kissamos, Crète"} image={"/kissamos.jpg"} />
+    )
+
+    const baliCr = ReactDOMServer.renderToStaticMarkup(
+      <PopupContent title={"Bali, Crète"} image={"/baliCr.jpg"} />
+    )
+
+    const mingun2 = ReactDOMServer.renderToStaticMarkup(
+      <PopupContent title={"Mingun, Birmani"} image={"/mingun2.jpg"} />
     )
 
     const geojson = {
@@ -48,7 +83,7 @@ const Map = () => {
             type: "Feature",
             properties: {
               description: birmanie,
-              icon: "theatre",
+              icon: "attraction",
             },
             geometry: {
               type: "Point",
@@ -59,7 +94,7 @@ const Map = () => {
             type: "Feature",
             properties: {
               description: indonesie,
-              icon: "volcano",
+              icon: "attraction",
             },
             geometry: {
               type: "Point",
@@ -69,12 +104,144 @@ const Map = () => {
           {
             type: "Feature",
             properties: {
-              description: muangNgoi,
-              icon: "park",
+              description: laos,
+              icon: "attraction",
             },
             geometry: {
               type: "Point",
               coordinates: [102.66453208065661, 20.728733100360074],
+            },
+          },
+          {
+            type: "Feature",
+            properties: {
+              description: australie,
+              icon: "attraction",
+            },
+            geometry: {
+              type: "Point",
+              coordinates: [115.89722266674312, -32.04594630543912],
+            },
+          },
+          {
+            type: "Feature",
+            properties: {
+              description: yangoon,
+              icon: "attraction",
+            },
+            geometry: {
+              type: "Point",
+              coordinates: [96.17422875537767, 16.80154387117817],
+            },
+          },
+          {
+            type: "Feature",
+            properties: {
+              description: valparaiso,
+              icon: "attraction",
+            },
+            geometry: {
+              type: "Point",
+              coordinates: [-71.61999313026931, -33.04383626697376],
+            },
+          },
+          {
+            type: "Feature",
+            properties: {
+              description: uyuni,
+              icon: "attraction",
+            },
+            geometry: {
+              type: "Point",
+              coordinates: [-67.01949071504167, -20.760153960506415],
+            },
+          },
+          {
+            type: "Feature",
+            properties: {
+              description: mekong,
+              icon: "attraction",
+            },
+            geometry: {
+              type: "Point",
+              coordinates: [101.88568155816853, 18.025211347134288],
+            },
+          },
+          {
+            type: "Feature",
+            properties: {
+              description: kyoto,
+              icon: "attraction",
+            },
+            geometry: {
+              type: "Point",
+              coordinates: [135.75742682447276, 34.99935660831572],
+            },
+          },
+          {
+            type: "Feature",
+            properties: {
+              description: kamaguchi,
+              icon: "attraction",
+            },
+            geometry: {
+              type: "Point",
+              coordinates: [138.7574594408178, 35.52464722872192],
+            },
+          },
+          {
+            type: "Feature",
+            properties: {
+              description: santiago,
+              icon: "attraction",
+            },
+            geometry: {
+              type: "Point",
+              coordinates: [-70.66427120069258, -33.45002905471177],
+            },
+          },
+          {
+            type: "Feature",
+            properties: {
+              description: machuPicchu,
+              icon: "attraction",
+            },
+            geometry: {
+              type: "Point",
+              coordinates: [-72.54577133862249, -13.164123278828214],
+            },
+          },
+          {
+            type: "Feature",
+            properties: {
+              description: kissamos,
+              icon: "attraction",
+            },
+            geometry: {
+              type: "Point",
+              coordinates: [23.65346701952552, 35.49698661653943],
+            },
+          },
+          {
+            type: "Feature",
+            properties: {
+              description: baliCr,
+              icon: "attraction",
+            },
+            geometry: {
+              type: "Point",
+              coordinates: [24.783242966933273, 35.414674826223475],
+            },
+          },
+          {
+            type: "Feature",
+            properties: {
+              description: mingun2,
+              icon: "attraction",
+            },
+            geometry: {
+              type: "Point",
+              coordinates: [95.99984104081295, 22.08732873448838],
             },
           },
         ],
@@ -86,12 +253,18 @@ const Map = () => {
     const initializeMap = ({ setMap, mapContainer }) => {
       const map = new mapboxgl.Map({
         container: mapContainer.current,
-        center: [110.684509, 25.91513],
+        center: [-175.73219158277513, 1.2417133592737315],
         style: "mapbox://styles/nicolasca/ck5iasnir0uhx1ipdepyn4xka",
-        zoom: 2,
+        zoom: 1.5,
       })
       // Add zoom and rotation controls to the map.
       map.addControl(new mapboxgl.NavigationControl(), "bottom-right")
+      map.addControl(
+        new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken,
+          mapboxgl: mapboxgl,
+        })
+      )
 
       map.on("load", () => {
         // Add a layer showing the places.
@@ -110,7 +283,7 @@ const Map = () => {
         map.resize()
 
         map.on("click", e => {
-          // console.log(e.lngLat)
+          console.log(e.lngLat)
         })
 
         map.on("click", "places", e => {
@@ -153,3 +326,14 @@ const Map = () => {
 }
 
 export default Map
+
+export const PopupContent = ({ title, image }) => {
+  return (
+    <>
+      <strong>{title}</strong>
+      <p>
+        <img style={{ maxWidth: "600px" }} src={image} alt="" />
+      </p>
+    </>
+  )
+}
