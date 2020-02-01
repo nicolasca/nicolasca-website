@@ -12,8 +12,12 @@
   max-width: 300px;
 }
 
+.Lips {
+  transition: fill 0.5s ease;
+}
+
 .Face:hover {
-  cursor: pointer;
+  cursor: crosshair;
   .Lips {
     fill: #d1162f;
     transition: fill 0.5s ease;

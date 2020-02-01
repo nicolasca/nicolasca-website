@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `nicolasky`,
-    description: `Nope.`,
-    author: `@nicolasca`,
+    description: `Nicolas Castejon website`,
+    author: `Nicolas Castejon`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -30,6 +30,14 @@ module.exports = {
       options: {
         // basePath defaults to `/`
         basePath: `/blog`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /images/,
+        },
       },
     },
     `gatsby-plugin-sass`,

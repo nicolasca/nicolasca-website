@@ -3,9 +3,13 @@
   flex-direction: column;
   margin: 0 auto;
   padding: 1rem;
-  color: #0f2347;
-  background-color: #80c271;
+  color: white;
+  background-color: black;
   height: 100%;
+
+  a {
+    font-family: "Audiowide";
+  }
 }
 
 .Logo {

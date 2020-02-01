@@ -1,4 +1,4 @@
-@import './normalize.css';
+@import "./normalize.css";
 
 a,
 a:hover,
@@ -19,4 +19,20 @@ header h1 a {
 
 header a {
   font-size: 1.2rem;
+}
+
+span,
+a,
+p {
+  font-family: "Alegreya";
+  font-size: 1.25rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Audiowide";
 }
