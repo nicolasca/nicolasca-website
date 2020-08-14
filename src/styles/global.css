@@ -1,5 +1,12 @@
 @import "./normalize.css";
 
+@font-face {
+  font-family: "Recursive";
+  src: url("../../static/fonts/Recursive_variable.woff2")
+    format("woff2-variations");
+  font-weight: 300 1000;
+}
+
 a,
 a:hover,
 a:visited,
@@ -24,7 +31,7 @@ header a {
 span,
 a,
 p {
-  font-family: "Alegreya";
+  font-family: "Recursive";
   font-size: 1.25rem;
 }
 
@@ -34,5 +41,5 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Berkshire Swash";
+  font-family: "Recursive";
 }

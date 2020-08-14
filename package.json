@@ -8,10 +8,12 @@
     "@emotion/core": "^10.0.27",
     "@mapbox/mapbox-gl-geocoder": "^4.5.1",
     "@mdx-js/react": "^1.5.4",
+    "d3": "^5.15.0",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-manifest": "^2.2.31",
     "gatsby-plugin-offline": "^3.0.27",
+    "gatsby-plugin-prettier-eslint": "^1.0.4",
     "gatsby-plugin-react-helmet": "^3.1.16",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sass": "^2.1.27",
@@ -27,12 +29,11 @@
     "react-helmet": "^5.2.1",
     "react-map-gl": "^5.2.1",
     "react-transition-group": "^4.3.0",
-    "theme-ui": "^0.2.52",
-    "typeface-alegreya": "0.0.69",
-    "typeface-audiowide": "0.0.72",
-    "typeface-berkshire-swash": "0.0.72"
+    "theme-ui": "^0.2.52"
   },
   "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-plugin-react": "^7.20.6",
     "prettier": "^1.19.1"
   },
   "keywords": [

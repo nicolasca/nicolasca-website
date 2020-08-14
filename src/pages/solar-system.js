@@ -10,7 +10,6 @@ const IndexPage = () => {
   const distanceVenus = 108
   const distanceEarth = 150
   const distanceMars = 228
-  const distanceJupiter = 778
   // const distanceSaturne = 1427
   // const distanceUranus = 2869
 

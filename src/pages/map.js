@@ -26,10 +26,6 @@ const Map = () => {
       <PopupContent title={"Muang Ngoi, Laos"} image={"/muang-ngoi.jpg"} />
     )
 
-    const australie = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Perth, Australie"} image={"/australie.jpg"} />
-    )
-
     const yangoon = ReactDOMServer.renderToStaticMarkup(
       <PopupContent title={"Yangoon, Birmanie"} image={"/yangoon.jpg"} />
     )
@@ -110,17 +106,6 @@ const Map = () => {
             geometry: {
               type: "Point",
               coordinates: [102.66453208065661, 20.728733100360074],
-            },
-          },
-          {
-            type: "Feature",
-            properties: {
-              description: australie,
-              icon: "attraction",
-            },
-            geometry: {
-              type: "Point",
-              coordinates: [115.89722266674312, -32.04594630543912],
             },
           },
           {

@@ -16,17 +16,17 @@ const Header = ({ siteTitle }) => (
     </div>
     <div className={styles.Menu}>
       <div>
-        <Link to="/" activeStyle={{ textDecoration: "underline" }}>
+        <Link to="/resume" activeStyle={{ textDecoration: "underline" }}>
           Accueil
         </Link>
       </div>
       <div>
-        <Link to="/resume" activeStyle={{ textDecoration: "underline" }}>
-          CV
+        <Link to="/solar-system" activeStyle={{ textDecoration: "underline" }}>
+          Système solaire
         </Link>
       </div>
       <div>
-        <Link to="/map/" activeStyle={{ textDecoration: "underline" }}>
+        <Link to="/map" activeStyle={{ textDecoration: "underline" }}>
           Voyage
         </Link>
       </div>
