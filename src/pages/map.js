@@ -312,6 +312,8 @@ const Map = () => {
 
 export default Map
 
+import Proptypes from "prop-types"
+
 export const PopupContent = ({ title, image }) => {
   return (
     <>
@@ -321,4 +323,9 @@ export const PopupContent = ({ title, image }) => {
       </p>
     </>
   )
+}
+
+PopupContent.propTypes = {
+  title: Proptypes.string,
+  image: Proptypes.string,
 }

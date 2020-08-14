@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import "./Home.scss"
 import Icon from "../images/nicolas.svg"
 
-const ResumePage = ({ data }) => (
+const ResumePage = () => (
   <Layout>
     <SEO title="Accueil" />
     <div className="Resume">

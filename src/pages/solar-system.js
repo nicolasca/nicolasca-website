@@ -23,27 +23,27 @@ const IndexPage = () => {
   const earthPixel = (systemSolarPixel * distanceEarth) / systemSolarDistance
   const marsPixel = (systemSolarPixel * distanceMars) / systemSolarDistance
 
-  const getStars = () => {
-    let starsContent = []
-    for (let i = 0; i < 50; i++) {
-      const scale = Math.random() / 5
-      const rotate = Math.random() * 360
-      const translateX = Math.random() * 100
-      const translateY = Math.random() * 100
+  // const getStars = () => {
+  //   let starsContent = []
+  //   for (let i = 0; i < 50; i++) {
+  //     const scale = Math.random() / 5
+  //     const rotate = Math.random() * 360
+  //     const translateX = Math.random() * 100
+  //     const translateY = Math.random() * 100
 
-      starsContent.push(
-        <div
-          key={i}
-          className="star-five"
-          style={{
-            ransform: `scale(${scale}) rotate(${rotate}deg) translate(${translateX}%, ${translateY}%)`,
-            right: "10%",
-          }}
-        ></div>
-      )
-    }
-    return starsContent
-  }
+  //     starsContent.push(
+  //       <div
+  //         key={i}
+  //         className="star-five"
+  //         style={{
+  //           ransform: `scale(${scale}) rotate(${rotate}deg) translate(${translateX}%, ${translateY}%)`,
+  //           right: "10%",
+  //         }}
+  //       ></div>
+  //     )
+  //   }
+  //   return starsContent
+  // }
 
   return (
     <Layout>
@@ -83,6 +83,8 @@ const IndexPage = () => {
 
 export default IndexPage
 
+import PropTypes from "prop-types"
+
 export const SVGEllipsis = ({ distancePixel }) => {
   return (
     <svg
@@ -98,4 +100,8 @@ export const SVGEllipsis = ({ distancePixel }) => {
       <circle cx="50%" cy="50%" r="49" strokeWidth="1px" />
     </svg>
   )
+}
+
+SVGEllipsis.propTypes = {
+  distancePixel: PropTypes.number,
 }
