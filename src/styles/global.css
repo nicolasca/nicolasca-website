@@ -11,13 +11,20 @@ a,
 a:hover,
 a:visited,
 a:active {
-  color: unset;
+  color: #c90000;
   text-decoration: unset;
 }
 
 a:hover,
 a:active {
   text-decoration: underline;
+}
+
+a {
+}
+a:hover {
+  color: white;
+  background-color: #c90000;
 }
 
 header h1 a {

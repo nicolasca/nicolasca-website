@@ -1,0 +1,383 @@
+.container {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  display: grid;
+  max-width: 740px;
+  grid-template-columns: auto 140px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.main-ticket {
+  border-radius: 10px 0 0 10px;
+  padding: 10px;
+  background-color: #f3f1c9;
+  display: grid;
+  grid-template-rows: repeat(4, min-content) auto;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.main-ticket > div {
+  padding: 8px;
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+.info-box span:first-child {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-bottom: 0.2em;
+}
+.info-box span:last-child {
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.title {
+  background-color: black;
+  color: #f3f1c9;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 2rem;
+  text-align: center;
+  grid-column: 1 / span 8;
+}
+
+.passenger {
+  grid-column: 1 / span 6;
+}
+
+.passenger,
+.depart,
+.date {
+  border-left: 3px solid black;
+}
+
+.passenger,
+.depart,
+.date,
+.arrival,
+.date,
+.time,
+.car {
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+}
+
+.depart {
+  grid-column: 1 / span 3;
+}
+
+.arrival {
+  grid-column: 4 / span 3;
+}
+
+.date {
+  grid-column: 1 / span 2;
+  span {
+    font-size: 1rem;
+  }
+}
+
+.time {
+  grid-column: 3 / span 2;
+}
+
+.car {
+  grid-column: 5 / span 2;
+}
+
+.platform {
+  background-color: #c02a28;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  color: white;
+  grid-column: 7 / span 2;
+  grid-row: 2 / span 3;
+  text-align: center;
+}
+
+.platform-depart {
+  font-size: 1.7rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.platform-from {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.platform-platform {
+  font-size: 1.1rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.platform-number {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.platform-9 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.platform-34 {
+  font-size: 1.5rem;
+  line-height: 1;
+  align-self: center;
+}
+
+.platform-34 > div {
+  padding: 0.3em;
+}
+
+.platform-34 > div:first-child {
+  border-bottom: 1px solid white;
+}
+
+.condition {
+  font-size: 12px;
+  grid-row: 5;
+  grid-column: 1 / span 6;
+  border: 0;
+}
+
+.barcode {
+  grid-column: 7 / span 2;
+  grid-row: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.barcode-scan {
+  height: 50px;
+  background: linear-gradient(
+    to right,
+    #333 2%,
+    #333 4%,
+    transparent 4%,
+    transparent 5%,
+    #333 5%,
+    #333 6%,
+    transparent 6%,
+    #333 6%,
+    #333 8%,
+    transparent 8%,
+    transparent 9%,
+    #333 9%,
+    #333 10.5%,
+    transparent 10.5%,
+    transparent 11%,
+    #333 11%,
+    #333 12%,
+    transparent 12%,
+    transparent 13.5%,
+    #333 13.5%,
+    #333 15%,
+    #333 17%,
+    transparent 17%,
+    transparent 19%,
+    #333 19%,
+    #333 20%,
+    transparent 20%,
+    transparent 21%,
+    #333 21%,
+    #333 22%,
+    transparent 22%,
+    transparent 23.5%,
+    #333 23.5%,
+    #333 25%,
+    transparent 25%,
+    transparent 26.5%,
+    #333 26.5%,
+    #333 27.5%,
+    transparent 27.5%,
+    transparent 28.5%,
+    #333 28.5%,
+    #333 30%,
+    transparent 30%,
+    transparent 32%,
+    #333 32%,
+    #333 34%,
+    #333 36%,
+    transparent 36%,
+    transparent 37.5%,
+    #333 37.5%,
+    #333 40%,
+    transparent 40%,
+    transparent 41.5%,
+    #333 41.5%,
+    #333 43%,
+    transparent 43%,
+    transparent 46%,
+    #333 46%,
+    #333 48%,
+    transparent 48%,
+    transparent 49%,
+    #333 49%,
+    transparent 49%,
+    transparent 50%,
+    #333 50%,
+    #333 51%,
+    transparent 51%,
+    transparent 53%,
+    #333 53%,
+    #333 54.5%,
+    transparent 54.5%,
+    transparent 56%,
+    #333 56%,
+    #333 58%,
+    transparent 58%,
+    transparent 59%,
+    #333 59%,
+    #333 60%,
+    #333 62.5%,
+    transparent 62.5%,
+    transparent 64%,
+    #333 64%,
+    #333 64%,
+    #333 67%,
+    transparent 67%,
+    transparent 69%,
+    #333 69%,
+    #333 70%,
+    transparent 70%,
+    transparent 71%,
+    #333 71%,
+    #333 72%,
+    transparent 72%,
+    transparent 73.5%,
+    #333 73.5%,
+    #333 76%,
+    transparent 76%,
+    transparent 79%,
+    #333 79%,
+    #333 80%,
+    transparent 80%,
+    transparent 82%,
+    #333 82%,
+    #333 82.5%,
+    transparent 82.5%,
+    transparent 84%,
+    #333 84%,
+    #333 87%,
+    transparent 87%,
+    transparent 89%,
+    #333 89%,
+    #333 91%,
+    transparent 91%,
+    transparent 92%,
+    #333 92%,
+    #333 95%,
+    transparent 95%
+  );
+}
+
+.barcode-number {
+  color: #c02a28;
+  letter-spacing: 0.3em;
+}
+
+.removable-ticket {
+  border-radius: 0 10px 10px 0;
+  background-color: #eac9a9;
+  border-left: 1px dashed black;
+  padding: 10px;
+  padding-top: 11px;
+
+  display: grid;
+  grid-template-rows: repeat(2, 124px) 60px;
+  grid-template-columns: 30px repeat(2, 45px);
+}
+
+.r-title {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 2;
+  background-color: #c02a28;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: white;
+  text-align: center;
+  padding: 0 0 0 5px;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+}
+
+.r-info {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.r-info {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  padding: 5px;
+}
+.r-info span:first-child {
+  font-size: 11px;
+  font-weight: 400;
+  margin-bottom: 0.2em;
+}
+.r-info span:last-child {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.r-depart,
+.r-date {
+  border-top: 3px solid #c02a28;
+}
+
+.r-depart,
+.r-date,
+.r-time,
+.r-arrival {
+  border-bottom: 3px solid #c02a28;
+}
+
+.r-time,
+.r-date {
+  border-right: 3px solid #c02a28;
+}
+
+.r-date,
+.r-time {
+  border-left: 3px solid #c02a28;
+}
+
+.r-depart {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+  border-width: 3px;
+}
+
+.r-arrival {
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+}
+
+.r-date {
+  grid-row: 2 / span 1;
+  grid-column: 3 / span 1;
+}
+
+.r-time {
+  grid-row: 1 / span 1;
+  grid-column: 3 / span 1;
+}
+
+.r-barcode {
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 3;
+  margin-top: 7px;
+}

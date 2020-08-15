@@ -1,10 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
-import ExperienceItem from "../components/ExperienceItem"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import "./Home.scss"
-import Icon from "../images/nicolas.svg"
+import React from "react";
+import { graphql } from "gatsby";
+import ExperienceItem from "../components/ExperienceItem";
+import Layout from "../components/layout/layout";
+import SEO from "../components/seo";
+import "./Home.scss";
+import Icon from "../images/nicolas.svg";
 
 const ResumePage = () => (
   <Layout>
@@ -79,9 +79,9 @@ const ResumePage = () => (
       </div>
     </div>
   </Layout>
-)
+);
 
-export default ResumePage
+export default ResumePage;
 
 export const query = graphql`
   query {
@@ -93,4 +93,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

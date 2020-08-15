@@ -1,13 +1,13 @@
-import React from "react"
+import React from "react";
 
-import ResumePage from "./resume"
+import ResumePage from "./resume";
 
 const IndexPage = () => {
   return (
     <div>
       <ResumePage></ResumePage>
     </div>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

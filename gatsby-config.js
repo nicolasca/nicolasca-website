@@ -5,6 +5,7 @@ module.exports = {
     author: `Nicolas Castejon`,
   },
   plugins: [
+    `gatsby-plugin-transition-link`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -65,4 +66,4 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
   ],
-}
+};
