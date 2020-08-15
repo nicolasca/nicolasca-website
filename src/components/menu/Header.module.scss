@@ -26,8 +26,27 @@
 .Menu {
   display: flex;
   flex-direction: column;
+  height: calc(100% - 7rem);
 
   & > div {
     padding: 0.5rem;
   }
+}
+
+.Languages {
+  display: flex;
+  margin-top: auto;
+
+  a {
+    padding: 0.2rem;
+  }
+
+  & > div:first-child {
+    margin-right: 1rem;
+  }
+}
+
+.Active a {
+  color: white;
+  background-color: #c90000;
 }

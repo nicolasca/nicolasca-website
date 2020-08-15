@@ -1,6 +1,7 @@
-import { graphql, StaticQuery } from "gatsby"
-import Img from "gatsby-image"
-import React from "react"
+import { graphql, StaticQuery } from "gatsby";
+import Img from "gatsby-image";
+import PropTypes from "prop-types";
+import React from "react";
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -34,16 +35,21 @@ const Image = props => (
     `}
     render={data => {
       const image = data.images.edges.find(n => {
-        return n.node.relativePath.includes(props.filename)
-      })
+        return n.node.relativePath.includes(props.filename);
+      });
       if (!image) {
-        return null
+        return null;
       }
 
-      const imageSizes = image.node.childImageSharp.sizes
-      return <Img alt={props.alt} sizes={imageSizes} />
+      const imageSizes = image.node.childImageSharp.sizes;
+      return <Img alt={props.alt} sizes={imageSizes} />;
     }}
   />
-)
+);
 
-export default Image
+Image.propTypes = {
+  filename: PropTypes.string,
+  alt: PropTypes.string,
+};
+
+export default Image;

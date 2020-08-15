@@ -8,8 +8,10 @@ import "../styles/mapbox-gl.css";
 import "../styles/mapbox-geocoder.css";
 import { useState, useEffect, useRef } from "react";
 import ReactDOMServer from "react-dom/server";
+import { useTranslation } from "gatsby-plugin-react-i18next";
 
 const Map = () => {
+  const { t } = useTranslation();
   const [map, setMap] = useState(null);
   const mapContainer = useRef(null);
 
@@ -296,7 +298,7 @@ const Map = () => {
 
   return (
     <Layout>
-      <SEO title="Carte de voyage" />
+      <SEO title={t("Travel")} />
       <div
         className="Map"
         style={{ height: "100vh", width: "100%" }}

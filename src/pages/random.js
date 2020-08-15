@@ -3,17 +3,23 @@ import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
 import SolarSystem from "../components/solar-system/solar-system";
 import HogwartsExpress from "../components/hogwarts-express/hogwarts-express";
+import { Trans, useTranslation } from "gatsby-plugin-react-i18next";
 import "./random.scss";
 
 const RandomPage = () => {
+  const { t } = useTranslation();
   return (
     <Layout>
-      <SEO title="Random" />
+      <SEO title={t("Random")} />
       <section className="space">
-        <h2>Système solaire à l&apos;échelle</h2>
+        <h2>
+          <Trans>Solar system at scale</Trans>
+        </h2>
         <p>
-          Je n&apos;ai pas pris la peine d&apos;ajouter les autres planètes,
-          étant donné qu&apos;elles sortent de l&apos;écran...
+          <Trans>
+            I didn&apos;t bother to add the other planets, since they come out
+            of the screen ...
+          </Trans>
         </p>
         <SolarSystem></SolarSystem>
       </section>

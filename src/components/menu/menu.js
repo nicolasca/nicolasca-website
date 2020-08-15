@@ -1,63 +1,63 @@
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { Link, useI18next, Trans } from "gatsby-plugin-react-i18next";
 import PropTypes from "prop-types";
 import React from "react";
 import styles from "./Header.module.scss";
 
-const Menu = ({ siteTitle }) => (
-  <header className={styles.Header}>
-    <div className={styles.Logo}>
-      <p
-        style={{
-          margin: 0,
-        }}
-      >
-        {siteTitle}
-      </p>
-    </div>
-    <div className={styles.Menu}>
-      <div>
-        <AniLink
-          fade
-          duration={0.5}
-          to="/"
-          activeStyle={{ textDecoration: "underline" }}
+const Menu = ({ siteTitle }) => {
+  const { languages, language, originalPath } = useI18next();
+
+  return (
+    <header className={styles.Header}>
+      <div className={styles.Logo}>
+        <p
+          style={{
+            margin: 0,
+          }}
         >
-          Accueil
-        </AniLink>
+          {siteTitle}
+        </p>
       </div>
-      <div>
-        <AniLink
-          fade
-          duration={0.5}
-          to="/map"
-          activeStyle={{ textDecoration: "underline" }}
-        >
-          Voyage
-        </AniLink>
-      </div>
-      {/* <div>
-        <AniLink
-          fade
-          duration={0.5}
+      <div className={styles.Menu}>
+        <div>
+          <Link to="/" activeStyle={{ textDecoration: "underline" }}>
+            <Trans>Home</Trans>
+          </Link>
+        </div>
+        <div>
+          <Link to="/map/" activeStyle={{ textDecoration: "underline" }}>
+            <Trans>Travel</Trans>
+          </Link>
+        </div>
+        {/* <div>
+        <Link
           to="/birmanie-story"
           activeStyle={{ textDecoration: "underline" }}
         >
           Une histoire en Birmanie
-        </AniLink>
+        </Link>
       </div> */}
-      <div>
-        <AniLink
-          fade
-          duration={0.5}
-          to="/random"
-          activeStyle={{ textDecoration: "underline" }}
-        >
-          Random
-        </AniLink>
+        <div>
+          <Link to="/random/" activeStyle={{ textDecoration: "underline" }}>
+            <Trans>Random</Trans>
+          </Link>
+        </div>
+        <div className={styles.Languages}>
+          {languages.map(lng => (
+            <div key={lng} className={lng === language ? styles.Active : ""}>
+              <Link
+                style={{ textTransform: "upperCase" }}
+                to={originalPath}
+                language={lng}
+              >
+                {lng}
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  </header>
-);
+    </header>
+  );
+};
 
 Menu.propTypes = {
   siteTitle: PropTypes.string,

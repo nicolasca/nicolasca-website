@@ -4,6 +4,7 @@ import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
 import mapboxgl from "mapbox-gl";
 import scrollama from "scrollama";
+import PropTypes from "prop-types";
 import config from "../../static/config";
 
 const layerTypes = {
@@ -162,5 +163,14 @@ function Chapter({ id, theme, title, image, description, currentChapterID }) {
     </div>
   );
 }
+
+Chapter.propTypes = {
+  id: PropTypes.string,
+  theme: PropTypes.string,
+  title: PropTypes.string,
+  image: PropTypes.string,
+  description: PropTypes.string,
+  currentChapterID: PropTypes.string,
+};
 
 export default BirmanyStorypage;

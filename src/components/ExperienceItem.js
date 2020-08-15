@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import PropTypes from "prop-types";
 
 const ExperienceItem = ({
   title,
@@ -25,7 +26,16 @@ const ExperienceItem = ({
       <p>{description}</p>
       <p>{technologies}</p>
     </div>
-  )
-}
+  );
+};
 
-export default ExperienceItem
+ExperienceItem.propTypes = {
+  title: PropTypes.string,
+  link: PropTypes.string,
+  linkTitle: PropTypes.string,
+  time: PropTypes.string,
+  description: PropTypes.string,
+  technologies: PropTypes.string,
+};
+
+export default ExperienceItem;
