@@ -21,7 +21,13 @@ const RandomPage = () => {
         <h2>Ticket Hogwarts Express</h2>
         <p>
           Aucunement une production originale. Inspirée de ce{" "}
-          <a href="https://codepen.io/oliviale/pen/MZZYyO">Codepen</a>{" "}
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://codepen.io/oliviale/pen/MZZYyO"
+          >
+            Codepen
+          </a>{" "}
           d&apos;Olivia Ng. Mais c&apos;était fun de jouer avec CSS Grid
         </p>
         <HogwartsExpress></HogwartsExpress>

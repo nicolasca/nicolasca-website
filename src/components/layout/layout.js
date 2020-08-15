@@ -11,8 +11,11 @@ import React from "react";
 import "../../styles/global.css";
 import "./layout.scss";
 import Menu from "../menu/menu";
+import { useState } from "react";
 
 const Layout = ({ children }) => {
+  const [activeBurger, setActiveBurger] = useState(false);
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -25,7 +28,15 @@ const Layout = ({ children }) => {
 
   return (
     <div className="site-container">
-      <div className="menu">
+      <div
+        className={"burger " + (activeBurger ? "active " : "")}
+        onClick={() => setActiveBurger(!activeBurger)}
+      >
+        <span className="burger-global burger-top"></span>
+        <span className="burger-global burger-middle"></span>
+        <span className="burger-global burger-bottom"></span>
+      </div>
+      <div className={"menu " + (activeBurger ? "open" : "")}>
         <Menu siteTitle={data.site.siteMetadata.title} />
       </div>
       <main>{children}</main>
