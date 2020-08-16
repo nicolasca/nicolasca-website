@@ -1,0 +1,90 @@
+.Scene {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h2 {
+    font-family: "Chang";
+    letter-spacing: 0.5rem;
+  }
+
+  a {
+    color: black;
+  }
+
+  & > div {
+    max-width: 300px;
+    min-width: 300px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .Travel svg {
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    #land {
+      fill: transparent;
+      stroke: black;
+      stroke-width: 2;
+      transition: all 0.7s ease;
+    }
+
+    #circle {
+      fill: transparent;
+      stroke: black;
+      stroke-width: 1;
+      transition: all 0.7s ease;
+    }
+  }
+
+  .Travel svg:hover {
+    cursor: pointer;
+    // g #land {
+    //   fill: url(#left-to-right);
+    // }
+    #circle {
+      fill: #e0242d;
+      stroke: 0;
+    }
+
+    #land {
+      fill: black;
+      stroke: 0;
+    }
+  }
+  // background: #1d1f20;
+}
+
+.Magic {
+  z-index: 5;
+  position: absolute;
+  top: calc(50% - 3rem);
+  left: calc(50% - 3rem);
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  // background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/hover-reveal.jpg")
+  //   50% 50% no-repeat fixed;
+  // background-size: cover;
+  border-radius: 50%;
+  background-color: red;
+  filter: none;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

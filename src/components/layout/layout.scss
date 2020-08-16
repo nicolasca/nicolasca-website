@@ -1,22 +1,21 @@
+@import "../../styles/variables.scss";
+
 .site-container {
   position: relative;
   display: flex;
+  flex-direction: column;
 }
 
 .menu {
-  min-width: 300px;
-  max-width: 300px;
-  position: fixed;
-  height: 100vh;
+  width: 100vw;
+  height: $header-height;
 }
 
 main {
-  width: calc(100vw - 300px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 0;
-  margin-left: 300px;
+  height: calc(100vh - #{$header-height});
 }
 
 // Burger icon animation
@@ -79,6 +78,11 @@ main {
 // Mobile display
 @media screen and (max-width: 768px) {
   .menu {
+    min-width: $menu-width-mobile;
+    max-width: $menu-width-mobile;
+    position: fixed;
+    height: 100vh;
+
     margin-left: -300px;
     transition: all 1s;
     transition-delay: 0.55s;

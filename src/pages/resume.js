@@ -4,7 +4,7 @@ import { Trans, useTranslation } from "gatsby-plugin-react-i18next";
 import ExperienceItem from "../components/ExperienceItem";
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
-import "./Home.scss";
+import "../styles/pages/Resume.scss";
 import Icon from "../images/nicolas.svg";
 
 const ResumePage = () => {
@@ -18,7 +18,7 @@ const ResumePage = () => {
 
           <div>
             <h1>Nicolas Castejon</h1>
-            <h2>
+            <h2 className="JobTitle">
               <Trans>Web Developer</Trans>
             </h2>
           </div>

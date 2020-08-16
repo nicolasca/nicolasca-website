@@ -4,7 +4,7 @@ import SEO from "../components/seo";
 import SolarSystem from "../components/solar-system/solar-system";
 import HogwartsExpress from "../components/hogwarts-express/hogwarts-express";
 import { Trans, useTranslation } from "gatsby-plugin-react-i18next";
-import "./random.scss";
+import "../styles/pages/random.scss";
 
 const RandomPage = () => {
   const { t } = useTranslation();

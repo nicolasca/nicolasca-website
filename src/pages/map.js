@@ -3,7 +3,7 @@ import mapboxgl from "mapbox-gl";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
-import "./Map.scss";
+import "../styles/pages/Map.scss";
 import "../styles/mapbox-gl.css";
 import "../styles/mapbox-geocoder.css";
 import { useState, useEffect, useRef } from "react";

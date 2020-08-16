@@ -8,9 +8,9 @@
 import { graphql, useStaticQuery } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
-import "../../styles/global.css";
+import "../../styles/global.scss";
 import "./layout.scss";
-import Menu from "../menu/menu";
+import Menu from "../menu/Menu";
 import { useState } from "react";
 
 const Layout = ({ children }) => {
@@ -36,6 +36,7 @@ const Layout = ({ children }) => {
         <span className="burger-global burger-middle"></span>
         <span className="burger-global burger-bottom"></span>
       </div>
+
       <div className={"menu " + (activeBurger ? "open" : "")}>
         <Menu siteTitle={data.site.siteMetadata.title} />
       </div>

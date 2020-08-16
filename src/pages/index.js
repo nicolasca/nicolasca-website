@@ -1,13 +1,8 @@
 import React from "react";
-
-import ResumePage from "./resume";
+import HomePage from "./Home";
 
 const IndexPage = () => {
-  return (
-    <div>
-      <ResumePage></ResumePage>
-    </div>
-  );
+  return <HomePage></HomePage>;
 };
 
 export default IndexPage;

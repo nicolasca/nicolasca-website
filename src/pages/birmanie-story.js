@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./birmanie-story.scss";
+import "../styles/pages/birmanie-story.scss";
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
 import mapboxgl from "mapbox-gl";

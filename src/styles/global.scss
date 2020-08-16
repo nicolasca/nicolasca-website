@@ -1,4 +1,5 @@
 @import "./normalize.css";
+@import "./variables.scss";
 
 @font-face {
   font-family: "Recursive";
@@ -7,11 +8,21 @@
   font-weight: 300 1000;
 }
 
+@font-face {
+  font-family: "Bonzai";
+  src: url("../../static/fonts/bonzai/bonzai.ttf") format("TrueType");
+}
+
+@font-face {
+  font-family: "Chang";
+  src: url("../../static/fonts/chang_and_eng/Chane___.ttf") format("TrueType");
+}
+
 a,
 a:hover,
 a:visited,
 a:active {
-  color: #c90000;
+  color: $red;
   text-decoration: unset;
 }
 
@@ -24,7 +35,7 @@ a {
 }
 a:hover {
   color: white;
-  background-color: #c90000;
+  background-color: $red;
 }
 
 header h1 a {
