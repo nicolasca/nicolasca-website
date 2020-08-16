@@ -54,6 +54,11 @@
   background-color: #c90000;
 }
 
+.ActiveLink {
+  text-decoration: underline;
+  background-color: #c90000;
+}
+
 @media screen and (max-width: 768px) {
   .Menu {
     flex-direction: column;

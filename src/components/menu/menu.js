@@ -6,35 +6,40 @@ import styles from "./Menu.module.scss";
 const Menu = () => {
   const { languages, language, originalPath } = useI18next();
 
+  const activeStyle = {
+    textDecoration: "underline",
+    backgroundColor: "#c90000",
+  };
+
   return (
     <header className={styles.Header}>
       <div className={styles.LeftSection}>
         <div>
-          <Link to="/" activeStyle={{ textDecoration: "underline" }}>
+          <Link to="/" activeStyle={activeStyle}>
             <Trans>Home</Trans>
           </Link>
         </div>
         <div>
-          <Link to="/resume/" activeStyle={{ textDecoration: "underline" }}>
+          <Link to="/resume/" activeStyle={activeStyle}>
             <Trans>Resume</Trans>
           </Link>
         </div>
         <div>
-          <Link to="/map/" activeStyle={{ textDecoration: "underline" }}>
+          <Link to="/map/" activeStyle={activeStyle}>
             <Trans>Travel</Trans>
           </Link>
         </div>
         {/* <div>
         <Link
           to="/birmanie-story"
-          activeStyle={{ textDecoration: "underline" }}
+          activeStyle={activeStyle}
         >
           Une histoire en Birmanie
         </Link>
       </div> */}
 
         <div>
-          <Link to="/random/" activeStyle={{ textDecoration: "underline" }}>
+          <Link to="/random/" activeStyle={activeStyle}>
             <Trans>Random</Trans>
           </Link>
         </div>
