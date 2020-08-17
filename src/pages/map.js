@@ -241,7 +241,7 @@ const Map = () => {
       const map = new mapboxgl.Map({
         container: mapContainer.current,
         center: [-175.73219158277513, 1.2417133592737315],
-        style: "mapbox://styles/nicolasca/ck5iasnir0uhx1ipdepyn4xka",
+        style: "mapbox://styles/nicolasca/ckdyssl1y05lt19p94phx3ipq",
         zoom: 1.5,
       });
       // Add zoom and rotation controls to the map.
@@ -264,6 +264,9 @@ const Map = () => {
             "icon-image": "{icon}-15",
             "icon-size": 1.2,
             "icon-allow-overlap": true,
+          },
+          paint: {
+            "icon-color": "#c90000",
           },
         });
         setMap(map);

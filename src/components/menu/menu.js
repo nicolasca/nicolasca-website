@@ -7,8 +7,7 @@ const Menu = () => {
   const { languages, language, originalPath } = useI18next();
 
   const activeStyle = {
-    textDecoration: "underline",
-    backgroundColor: "#c90000",
+    borderBottom: "3px solid #c90000",
   };
 
   return (
