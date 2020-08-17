@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import "../../styles/global.scss";
 import "./layout.scss";
-import Menu from "../menu/Menu";
+import Menu from "../menu/menu";
 import { useState } from "react";
 
 const Layout = ({ children }) => {
