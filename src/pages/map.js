@@ -331,7 +331,7 @@ export const PopupContent = ({ title, image }) => {
     <>
       <strong>{title}</strong>
       <p>
-        <img style={{ maxWidth: "600px" }} src={image} alt="" />
+        <img style={{ maxWidth: "min(600px, 90vw)" }} src={image} alt="" />
       </p>
     </>
   );
