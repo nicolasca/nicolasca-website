@@ -1,5 +1,23 @@
 @import "../../styles/variables.scss";
 
+.MenuDesktop {
+  display: block;
+}
+
+.MenuMobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .MenuDesktop {
+    display: none;
+  }
+
+  .MenuMobile {
+    display: block;
+  }
+}
+
 .Header {
   display: flex;
   align-items: center;

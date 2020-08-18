@@ -2,7 +2,6 @@ import { Link, useI18next, Trans } from "gatsby-plugin-react-i18next";
 import PropTypes from "prop-types";
 import React from "react";
 import styles from "./Menu.module.scss";
-import useWindowSize from "../../utils/useWindowSize";
 import { slide as Slidebar } from "react-burger-menu";
 
 const activeStyle = {
@@ -10,9 +9,16 @@ const activeStyle = {
 };
 
 const Menu = () => {
-  const windowSize = useWindowSize();
-
-  return <>{windowSize.innerWidth > 768 ? <MenuDesktop /> : <MenuMobile />}</>;
+  return (
+    <>
+      <div className={styles.MenuDesktop}>
+        <MenuDesktop />
+      </div>
+      <div className={styles.MenuMobile}>
+        <MenuMobile />
+      </div>
+    </>
+  );
 };
 
 const MenuDesktop = () => {
