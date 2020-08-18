@@ -72,6 +72,10 @@ const Map = () => {
       <PopupContent title={"Mingun, Birmani"} image={"/mingun2.jpg"} />
     );
 
+    const strasbourg = ReactDOMServer.renderToStaticMarkup(
+      <PopupContent title={"Strasbourg, France"} image={"/strasbourg.jpg"} />
+    );
+
     const geojson = {
       type: "geojson",
       data: {
@@ -231,6 +235,17 @@ const Map = () => {
               coordinates: [95.99984104081295, 22.08732873448838],
             },
           },
+          {
+            type: "Feature",
+            properties: {
+              description: strasbourg,
+              icon: "attraction",
+            },
+            geometry: {
+              type: "Point",
+              coordinates: [7.7507127, 48.584614],
+            },
+          },
         ],
       },
     };
@@ -258,15 +273,11 @@ const Map = () => {
         map.addSource("places", geojson);
         map.addLayer({
           id: "places",
-          type: "symbol",
+          type: "circle",
           source: "places",
-          layout: {
-            "icon-image": "{icon}-15",
-            "icon-size": 1.2,
-            "icon-allow-overlap": true,
-          },
           paint: {
-            "icon-color": "#c90000",
+            "circle-color": "#c90000",
+            "circle-radius": 5,
           },
         });
         setMap(map);
@@ -276,7 +287,7 @@ const Map = () => {
           const coordinates = e.features[0].geometry.coordinates.slice();
           const description = e.features[0].properties.description;
 
-          new mapboxgl.Popup({ className: "popup", anchor: "bottom" })
+          new mapboxgl.Popup({ className: "popup", anchor: "top" })
             .setLngLat(coordinates)
             .setHTML(description)
             .addTo(map);

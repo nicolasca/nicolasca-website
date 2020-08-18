@@ -5,9 +5,9 @@
   align-items: center;
   color: black;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 1);
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
 
   a,
   a:hover,
@@ -22,11 +22,20 @@
   .Active a {
     border-bottom: 3px solid $red;
   }
+
+  .Languages {
+    div.Active a {
+      background-color: $red;
+    }
+  }
 }
 
-.Logo {
-  p {
-    font-size: 2rem;
+.HeaderMobile {
+  a:hover,
+  a:active {
+    color: $red !important;
+    background-color: #fff;
+    text-decoration: unset;
   }
 }
 
@@ -47,7 +56,16 @@
   }
 
   a {
+    color: black;
     padding: 0.2rem;
+    border-bottom: 3px solid #fff;
+  }
+
+  div.Active {
+    background-color: $red;
+    a {
+      color: white;
+    }
   }
 
   & > div:first-child {
@@ -56,7 +74,16 @@
 }
 
 @media screen and (max-width: 768px) {
-  .Menu {
+  .Header {
+    flex-direction: column;
+    align-items: unset;
+  }
+
+  .LeftSection {
     flex-direction: column;
   }
+}
+
+.bm-item-list a:hover {
+  padding: 0.8em;
 }

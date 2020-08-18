@@ -2,13 +2,21 @@ import { Link, useI18next, Trans } from "gatsby-plugin-react-i18next";
 import PropTypes from "prop-types";
 import React from "react";
 import styles from "./Menu.module.scss";
+import useWindowSize from "../../utils/useWindowSize";
+import { slide as Slidebar } from "react-burger-menu";
+
+const activeStyle = {
+  color: "#c90000",
+};
 
 const Menu = () => {
-  const { languages, language, originalPath } = useI18next();
+  const windowSize = useWindowSize();
 
-  const activeStyle = {
-    borderBottom: "3px solid #c90000",
-  };
+  return <>{windowSize.innerWidth > 768 ? <MenuDesktop /> : <MenuMobile />}</>;
+};
+
+const MenuDesktop = () => {
+  const { languages, language, originalPath } = useI18next();
 
   return (
     <header className={styles.Header}>
@@ -58,6 +66,90 @@ const Menu = () => {
         ))}
       </div>
     </header>
+  );
+};
+
+const MenuMobile = () => {
+  var stylesMenu = {
+    bmBurgerButton: {
+      position: "fixed",
+      width: "36px",
+      height: "30px",
+      left: "36px",
+      top: "36px",
+    },
+    bmBurgerBars: {
+      background: "#000",
+    },
+    bmCrossButton: {
+      height: "24px",
+      width: "24px",
+    },
+    bmCross: {
+      background: "#000",
+    },
+    bmMenuWrap: {
+      position: "fixed",
+      height: "100%",
+    },
+    bmMenu: {
+      background: "#fff",
+      padding: "2.5em 1.5em 0",
+      fontSize: "1.15em",
+    },
+    bmMorphShape: {
+      fill: "#373a47",
+    },
+    bmItemList: {
+      color: "#b8b7ad",
+      padding: "0.8em",
+    },
+    bmItem: {
+      display: "block",
+      color: "#000",
+      padding: "0.8rem",
+    },
+    bmOverlay: {
+      background: "rgba(0, 0, 0, 0.3)",
+    },
+  };
+  const { languages, language, originalPath } = useI18next();
+
+  return (
+    <Slidebar
+      id="stack"
+      styles={stylesMenu}
+      outerContainerId={"outer-container"}
+      className={styles.HeaderMobile}
+    >
+      <Link to="/" activeStyle={activeStyle} className="menu-item">
+        <Trans>Home</Trans>
+      </Link>
+      <Link to="/resume/" activeStyle={activeStyle} className="menu-item">
+        <Trans>Resume</Trans>
+      </Link>
+      <Link to="/map/" activeStyle={activeStyle} className="menu-item">
+        <Trans>Travel</Trans>
+      </Link>
+      <Link to="/random/" activeStyle={activeStyle} className="menu-item">
+        <Trans>Random</Trans>
+      </Link>
+      <div className="menu-item">
+        <div className={styles.Languages}>
+          {languages.map(lng => (
+            <div key={lng} className={lng === language ? styles.Active : ""}>
+              <Link
+                style={{ textTransform: "upperCase" }}
+                to={originalPath}
+                language={lng}
+              >
+                {lng}
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </Slidebar>
   );
 };
 

@@ -111,7 +111,7 @@ $system-solor-size: 600px;
 .SolarSystem .Ellipsis {
   position: absolute;
   fill: transparent;
-  stroke: white;
+  stroke: #000;
 }
 
 .Home h1 {
@@ -128,7 +128,7 @@ $system-solor-size: 600px;
   animation-timing-function: ease-in;
 
   path {
-    fill: white;
+    fill: #000;
   }
 }
 

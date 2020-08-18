@@ -11,33 +11,35 @@ const RandomPage = () => {
   return (
     <Layout>
       <SEO title={t("Random")} />
-      <section className="space">
-        <h2>
-          <Trans>Solar system at scale</Trans>
-        </h2>
-        <p>
-          <Trans>
-            I didn&apos;t bother to add the other planets, since they come out
-            of the screen ...
-          </Trans>
-        </p>
-        <SolarSystem></SolarSystem>
-      </section>
-      <section>
-        <h2>Ticket Hogwarts Express</h2>
-        <p>
-          Aucunement une production originale. Inspirée de ce{" "}
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://codepen.io/oliviale/pen/MZZYyO"
-          >
-            Codepen
-          </a>{" "}
-          d&apos;Olivia Ng. Mais c&apos;était fun de jouer avec CSS Grid
-        </p>
-        <HogwartsExpress></HogwartsExpress>
-      </section>
+      <div className="RandomContainer">
+        <section className="space">
+          <h2>
+            <Trans>Solar system at scale</Trans>
+          </h2>
+          <p>
+            <Trans>
+              I didn&apos;t bother to add the other planets, since they come out
+              of the screen ...
+            </Trans>
+          </p>
+          <SolarSystem></SolarSystem>
+        </section>
+        <section>
+          <h2>Ticket Hogwarts Express</h2>
+          <p>
+            Aucunement une production originale. Inspirée de ce{" "}
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href="https://codepen.io/oliviale/pen/MZZYyO"
+            >
+              Codepen
+            </a>{" "}
+            d&apos;Olivia Ng. Mais c&apos;était fun de jouer avec CSS Grid
+          </p>
+          <HogwartsExpress></HogwartsExpress>
+        </section>
+      </div>
     </Layout>
   );
 };

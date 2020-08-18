@@ -7,9 +7,9 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  flex-wrap: wrap;
 
   h2 {
-    font-family: "Chang";
     letter-spacing: 0.5rem;
   }
 
@@ -26,6 +26,12 @@
   }
 
   & > div {
+    width: 33%;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+
     a {
       display: flex;
       align-items: center;

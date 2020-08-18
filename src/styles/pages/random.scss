@@ -1,3 +1,11 @@
+.RandomContainer {
+  @media screen and (max-width: 768px) {
+    margin-top: 2rem;
+    height: calc(100vh + 3rem);
+    width: 100%;
+  }
+}
+
 section {
   min-height: 100vh;
   min-width: 100%;
@@ -12,6 +20,6 @@ section {
 }
 
 section.space {
-  background-color: #070b34;
-  color: white;
+  // background-color: #070b34;
+  color: #000;
 }
