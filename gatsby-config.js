@@ -5,6 +5,13 @@ module.exports = {
     author: `Nicolas Castejon`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-59687093-3",
+        head: true
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -81,12 +88,6 @@ module.exports = {
           nsSeparator: false,
         },
       },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-59687093-3",
-      },
-    },
+    }
   ],
 };
