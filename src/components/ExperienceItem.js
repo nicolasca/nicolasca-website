@@ -10,8 +10,8 @@ const ExperienceItem = ({
   technologies,
 }) => {
   return (
-    <div>
-      <h4>
+    <div style={{margin: '3rem 0'}}>
+      <h3>
         {title}
         {link ? (
           <>
@@ -21,8 +21,8 @@ const ExperienceItem = ({
             </a>
           </>
         ) : null}
-      </h4>
-      <p>{time}</p>
+      </h3>
+      <h4> {time} </h4>
       <p>{description}</p>
       <p>{technologies}</p>
     </div>

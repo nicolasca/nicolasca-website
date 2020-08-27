@@ -6,6 +6,7 @@ import { slide as Slidebar } from "react-burger-menu";
 
 const activeStyle = {
   color: "#c90000",
+  fontWeight: "bold"
 };
 
 const Menu = () => {

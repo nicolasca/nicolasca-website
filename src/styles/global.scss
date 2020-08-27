@@ -8,16 +8,6 @@
   font-weight: 300 1000;
 }
 
-@font-face {
-  font-family: "Bonzai";
-  src: url("../../static/fonts/bonzai/bonzai.ttf") format("TrueType");
-}
-
-@font-face {
-  font-family: "Chang";
-  src: url("../../static/fonts/chang_and_eng/Chane___.ttf") format("TrueType");
-}
-
 a,
 a:hover,
 a:visited,
@@ -50,7 +40,7 @@ span,
 a,
 p {
   font-family: "Recursive";
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 h1,
