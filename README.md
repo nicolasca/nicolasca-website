@@ -1,3 +1,3 @@
 ## Personal website
 
-Done with Gatsby.
+Done with gatsby (ReactJS).
