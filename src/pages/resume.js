@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { Trans, useTranslation } from "gatsby-plugin-react-i18next";
+import { FormattedMessage, useIntl } from "gatsby-plugin-react-intl";
 import ExperienceItem from "../components/ExperienceItem";
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
@@ -8,10 +8,10 @@ import "../styles/pages/Resume.scss";
 import Icon from "../images/nicolas.svg";
 
 const ResumePage = () => {
-  const { t } = useTranslation();
+  const intl = useIntl();
   return (
     <Layout>
-      <SEO title={t("Home")} />
+      <SEO title={intl.formatMessage({ id: "Home" })} />
       <div className="Resume">
         <div className="Title">
           <Icon />
@@ -19,14 +19,14 @@ const ResumePage = () => {
           <div>
             <h1>Nicolas Castejon</h1>
             <h2 className="JobTitle">
-              <Trans>Web Developer</Trans>
+              {intl.formatMessage({ id: "Web Developer" })}
             </h2>
           </div>
         </div>
 
         <div className="Skills">
           <h2>
-            <Trans>Skills</Trans>
+            <FormattedMessage id="Skills" />{" "}
           </h2>
           <div>
             <p>Javascript, HTML, CSS</p>
@@ -36,9 +36,12 @@ const ResumePage = () => {
 
         <div className="Experience">
           <h2>
-            <Trans>Experience</Trans>
-             <small>{' (7 '}<Trans>years</Trans>{')'}</small>
-            
+            <FormattedMessage id="Experience" />
+            <small>
+              {" (7 "}
+              <FormattedMessage id="years" />
+              {")"}
+            </small>
           </h2>
           <ExperienceItem
             title="Métropole de lyon"
@@ -75,7 +78,7 @@ const ResumePage = () => {
 
         <div className="Education">
           <h2>
-            <Trans>Education</Trans>
+            <FormattedMessage id="Education" />
           </h2>
           <div>
             <h3>Master en Informatique - 2010</h3>
@@ -94,12 +97,10 @@ const ResumePage = () => {
 export default ResumePage;
 
 export const query = graphql`
-  query {
+  {
     file(relativePath: { eq: "nicolas.jpg" }) {
       childImageSharp {
-        fixed(width: 250, height: 250) {
-          ...GatsbyImageSharpFixed
-        }
+        gatsbyImageData(width: 250, height: 250, layout: FIXED)
       }
     }
   }

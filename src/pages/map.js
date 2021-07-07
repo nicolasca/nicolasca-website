@@ -326,7 +326,7 @@ export default Map;
 
 import Proptypes from "prop-types";
 
-export const PopupContent = ({ title, image }) => {
+const PopupContent = ({ title, image }) => {
   return (
     <>
       <strong>{title}</strong>

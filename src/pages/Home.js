@@ -4,7 +4,7 @@ import "../styles/pages/Home.scss";
 import JapanMap from "../images/japan.svg";
 import HTMLCode from "../images/html-code.svg";
 import Random from "../images/random.svg";
-import { Trans } from "gatsby-plugin-react-i18next";
+import { FormattedMessage } from "gatsby-plugin-react-intl";
 
 const HomePage = () => {
   return (
@@ -13,7 +13,7 @@ const HomePage = () => {
         <Link to="/resume/">
           <HTMLCode />
           <h2>
-            <Trans>Resume</Trans>
+            <FormattedMessage id="Resume" />
           </h2>
         </Link>
       </div>
@@ -21,7 +21,7 @@ const HomePage = () => {
         <Link to="/map/">
           <JapanMap />
           <h2>
-            <Trans>Travel</Trans>
+            <FormattedMessage id="Travel" />
           </h2>
         </Link>
       </div>
@@ -30,7 +30,7 @@ const HomePage = () => {
         <Link to="/random/">
           <Random />
           <h2>
-            <Trans>Random</Trans>
+            <FormattedMessage id="Random" />
           </h2>
         </Link>
       </div>
