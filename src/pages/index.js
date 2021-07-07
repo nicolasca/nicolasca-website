@@ -2,13 +2,13 @@ import React from "react";
 import HomePage from "./Home";
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
-import { useTranslation } from "gatsby-plugin-react-i18next";
+import { useIntl } from "gatsby-plugin-react-intl";
 
 const IndexPage = () => {
-  const { t } = useTranslation();
+  const intl = useIntl();
   return (
     <Layout>
-      <SEO title={t("Home")} />
+      <SEO title={intl.formatMessage({id: "Home"})} />
       <HomePage></HomePage>
     </Layout>
   );

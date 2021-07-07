@@ -14,7 +14,7 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-helmet-async`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

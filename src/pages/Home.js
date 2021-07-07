@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby-plugin-react-i18next";
+import { Link } from "gatsby-plugin-react-intl";
 import "../styles/pages/Home.scss";
 import JapanMap from "../images/japan.svg";
 import HTMLCode from "../images/html-code.svg";
