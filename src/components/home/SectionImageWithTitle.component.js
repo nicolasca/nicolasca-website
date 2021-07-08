@@ -19,9 +19,9 @@ function SectionImageWithTitle({ to, titleId, children }) {
 }
 
 SectionImageWithTitle.propTypes = {
-  to: PropTypes.String,
+  to: PropTypes.string,
   children: PropTypes.node,
-  titleId: PropTypes.String,
+  titleId: PropTypes.string,
 };
 
 export default SectionImageWithTitle;

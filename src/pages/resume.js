@@ -1,30 +1,73 @@
 import React from "react";
 import { graphql } from "gatsby";
+import styled from "styled-components";
 import { FormattedMessage, useIntl } from "gatsby-plugin-react-intl";
 import ExperienceItem from "../components/ExperienceItem";
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
-import "../styles/pages/Resume.scss";
-import Icon from "../assets/svgs/nicolas.svg";
+import FaceIcon from "../assets/svgs/nicolas.svg";
+
+const ResumeWrapper = styled.div`
+  display: block;
+  margin: auto;
+  max-width: 700px;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 1rem;
+
+  & > * {
+    margin: 1rem;
+    padding: -1rem;
+  }
+`;
+
+const NameWrapper = styled.div``;
+
+const FaceIconWrapper = styled(FaceIcon)`
+  width: 200px;
+  margin-right: 1rem;
+
+  &:hover {
+    cursor: crosshair;
+    .Lips {
+      fill: #0b48f0;
+      transition: fill 0.5s ease;
+    }
+  }
+`;
+
+const Title = styled.div`
+  display: flex;
+  align-items: center;
+
+  h2.JobTitle {
+    color: #0b48f0;
+  }
+`;
+
+const Skills = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 const ResumePage = () => {
   const intl = useIntl();
   return (
     <Layout>
       <SEO title={intl.formatMessage({ id: "Home" })} />
-      <div className="Resume">
-        <div className="Title">
-          <Icon />
+      <ResumeWrapper>
+        <Title>
+          <FaceIconWrapper />
 
-          <div>
+          <NameWrapper>
             <h1>Nicolas Castejon</h1>
             <h2 className="JobTitle">
               {intl.formatMessage({ id: "Web Developer" })}
             </h2>
-          </div>
-        </div>
+          </NameWrapper>
+        </Title>
 
-        <div className="Skills">
+        <Skills>
           <h2>
             <FormattedMessage id="Skills" />{" "}
           </h2>
@@ -32,9 +75,9 @@ const ResumePage = () => {
             <p>Javascript, HTML, CSS</p>
             <p>Frameworks & libs:ReactJS, Angular 2+, </p>
           </div>
-        </div>
+        </Skills>
 
-        <div className="Experience">
+        <div>
           <h2>
             <FormattedMessage id="Experience" />
             <small>
@@ -89,7 +132,7 @@ const ResumePage = () => {
             <p>Université de Lyon</p>
           </div>
         </div>
-      </div>
+      </ResumeWrapper>
     </Layout>
   );
 };
