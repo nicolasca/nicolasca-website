@@ -45,7 +45,7 @@ const MenuDesktop = () => {
         </div>
         <div>
           <Link to="/resume/" activeStyle={activeStyle}>
-            <FormattedMessage id="Resume" />
+            <FormattedMessage id="resume" />
           </Link>
         </div>
         <div>
@@ -144,7 +144,7 @@ const MenuMobile = () => {
         <FormattedMessage id="Home" />
       </Link>
       <Link to="/resume/" activeStyle={activeStyle} className="menu-item">
-        <FormattedMessage id="Resume" />
+        <FormattedMessage id="resume" />
       </Link>
       <Link to="/map/" activeStyle={activeStyle} className="menu-item">
         <FormattedMessage id="Travel" />

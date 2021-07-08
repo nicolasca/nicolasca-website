@@ -5,7 +5,7 @@ import ExperienceItem from "../components/ExperienceItem";
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
 import "../styles/pages/Resume.scss";
-import Icon from "../images/nicolas.svg";
+import Icon from "../assets/svgs/nicolas.svg";
 
 const ResumePage = () => {
   const intl = useIntl();

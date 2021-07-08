@@ -1,7 +1,8 @@
 {
   "Home": "Accueil",
   "Travel": "Voyage",
-  "Resume": "CV",
+  "resume": "CV",
+  "projects": "Les projets",
   "Random": "Aléatoire",
   "Web Developer": "Développeur Web",
   "Skills": "Compétences",

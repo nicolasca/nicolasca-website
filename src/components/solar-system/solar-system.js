@@ -1,6 +1,6 @@
 import React from "react";
 import "./solar-system.scss";
-import Rocket from "../../images/rocket.svg";
+import Rocket from "../../assets/svgs/rocket.svg";
 
 const SolarSystem = () => {
   const distanceMercure = 58;

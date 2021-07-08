@@ -1,7 +1,8 @@
 {
   "Home": "Home",
   "Travel": "Travel",
-  "Resume": "Resume",
+  "resume": "Resume",
+  "projects": "Projects",
   "Random": "Random",
   "Web Developer": "Web Developer",
   "Skills": "Skills",

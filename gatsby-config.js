@@ -3,14 +3,7 @@ module.exports = {
     title: `Nicolas Castejon`,
     description: `Nicolas Castejon personal website`,
     author: `Nicolas Castejon`,
-    siteUrl: `nicolasca.com`,
-    // Used for social links in the root footer
-    social: [
-      {
-        name: `Twitter`,
-        url: `https://twitter.com/gatsbyjs`,
-      },
-    ],
+    siteUrl: `https://nicolasca.com`,
   },
   plugins: [
     {
@@ -27,7 +20,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     `gatsby-plugin-image`,
@@ -40,21 +33,14 @@ module.exports = {
         short_name: `starter`,
         start_url: `/`,
         display: `minimal-ui`,
-        icon: `src/images/goat-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    {
-      resolve: `gatsby-theme-blog`,
-      options: {
-        // basePath defaults to `/`
-        basePath: `/blog`,
+        icon: `src/assets/images/goat-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /images/,
+          include: /svgs/,
         },
       },
     },

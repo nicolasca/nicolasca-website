@@ -1,9 +1,9 @@
 import React from "react";
 import { Link, FormattedMessage } from "gatsby-plugin-react-intl";
 import styled from "styled-components";
-import JapanMap from "../images/japan.svg";
-import HTMLCode from "../images/html-code.svg";
-import Random from "../images/random.svg";
+import JapanMap from "../assets/svgs/japan.svg";
+import HTMLCode from "../assets/svgs/html-code.svg";
+import Random from "../assets/svgs/random.svg";
 
 const Block = styled.div`
   position: relative;
