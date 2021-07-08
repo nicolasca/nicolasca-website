@@ -3,6 +3,14 @@ module.exports = {
     title: `Nicolas Castejon`,
     description: `Nicolas Castejon personal website`,
     author: `Nicolas Castejon`,
+    siteUrl: `nicolasca.com`,
+    // Used for social links in the root footer
+    social: [
+      {
+        name: `Twitter`,
+        url: `https://twitter.com/gatsbyjs`,
+      },
+    ],
   },
   plugins: [
     {
@@ -78,7 +86,7 @@ module.exports = {
       resolve: `gatsby-plugin-react-intl`,
       options: {
         // language JSON resource path
-        path: `${__dirname}/locales`,
+        path: `${__dirname}/src/locales`,
         // supported language
         languages: [`fr`, `en`],
         // language file path
@@ -91,5 +99,6 @@ module.exports = {
         ignoredPaths: [],
       },
     },
+    `gatsby-plugin-styled-components`,
   ],
 };
