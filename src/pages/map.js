@@ -1,14 +1,28 @@
 import React from "react";
 import mapboxgl from "mapbox-gl";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
+import styled from "styled-components";
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
-import "../styles/pages/Map.scss";
+import "../styles/pages/Map.css";
 import "../styles/mapbox-gl.css";
 import "../styles/mapbox-geocoder.css";
 import { useState, useEffect, useRef } from "react";
 import ReactDOMServer from "react-dom/server";
 import { useIntl } from "gatsby-plugin-react-intl";
+
+const MapContainer = styled.div`
+  span,
+  a,
+  p {
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: -3rem;
+    height: calc(100vh + 3rem);
+  }
+`;
 
 const Map = () => {
   const intl = useIntl();
@@ -312,9 +326,8 @@ const Map = () => {
 
   return (
     <Layout>
-      <SEO title={intl.formatMessage({id:"Travel"})} />
-      <div
-        className="Map"
+      <SEO title={intl.formatMessage({ id: "Travel" })} />
+      <MapContainer
         style={{ height: "100vh", width: "100%" }}
         ref={el => (mapContainer.current = el)}
       />
