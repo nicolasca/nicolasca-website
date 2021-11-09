@@ -1,26 +1,23 @@
 import React from "react";
+import { useIntl, FormattedMessage } from "gatsby-plugin-intl";
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";
 import SolarSystem from "../components/solar-system/solar-system";
 import HogwartsExpress from "../components/hogwarts-express/hogwarts-express";
-import { Trans, useTranslation } from "gatsby-plugin-react-i18next";
 import "../styles/pages/random.scss";
 
 const RandomPage = () => {
-  const { t } = useTranslation();
+  const intl = useIntl();
   return (
     <Layout>
-      <SEO title={t("Random")} />
+      <SEO title={intl.formatMessage({ id: "Random" })} />
       <div className="RandomContainer">
         <section className="space">
           <h2>
-            <Trans>Solar system at scale</Trans>
+            <FormattedMessage id="Solar system at scale" />
           </h2>
           <p>
-            <Trans>
-              I didn&apos;t bother to add the other planets, since they come out
-              of the screen ...
-            </Trans>
+            <FormattedMessage id="no-bother-planet" />
           </p>
           <SolarSystem></SolarSystem>
         </section>
