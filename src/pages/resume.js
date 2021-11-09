@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { FormattedMessage, useIntl } from "gatsby-plugin-react-intl";
+import { FormattedMessage, useIntl } from "gatsby-plugin-intl";
 import ExperienceItem from "../components/ExperienceItem";
 import Layout from "../components/layout/layout";
 import SEO from "../components/seo";

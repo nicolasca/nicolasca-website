@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from "gatsby-plugin-react-i18next";
+import { FormattedMessage, Link } from "gatsby-plugin-intl";
 import "../styles/pages/Home.scss";
 import JapanMap from "../images/japan.svg";
 import HTMLCode from "../images/html-code.svg";
 import Random from "../images/random.svg";
-import { FormattedMessage } from "gatsby-plugin-react-intl";
 
 const HomePage = () => {
   return (
