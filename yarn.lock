@@ -6551,7 +6551,7 @@ gatsby-plugin-image@^1.2.1, gatsby-plugin-image@^1.9.0:
     objectFitPolyfill "^2.3.5"
     prop-types "^15.7.2"
 
-gatsby-plugin-intl@^3.0.0:
+gatsby-plugin-intl@^0.3.0:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-intl/-/gatsby-plugin-intl-0.3.3.tgz#3a0e55e6641bfcb09fae20215b8f72e2a0ec3de4"
   integrity sha512-VPugNJv3GDkT6RcOBfncZPw3Eqh98RyvChsXfX7VuMQ8mBVoNB6XyNSIiEGG/atxFrpSp/r3WUKpnzpLLpY5dg==
