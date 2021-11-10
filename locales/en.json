@@ -1,8 +1,8 @@
 {
   "Home": "Home",
-  "Travel": "Travel",
+  "Map": "Map",
   "Resume": "Resume",
-  "Photos": "Photos",
+  "Travel": "Travel",
   "Random": "Random",
   "Web Developer": "Web Developer",
   "Skills": "Skills",
@@ -10,5 +10,6 @@
   "Education": "Education",
   "Solar system at scale": "Solar system at scale",
   "no-bother-planet": "I didn't bother to add the other planets,since they come out of the screen ...",
-  "years": "years"
+  "years": "years",
+  "Japan": "Japan"
 }

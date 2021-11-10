@@ -16,11 +16,11 @@ const HomePage = () => {
           </h2>
         </Link>
       </div>
-      <div className="Travel">
+      <div className="Map">
         <Link to="/map/">
           <JapanMap />
           <h2>
-            <FormattedMessage id="Travel" />
+            <FormattedMessage id="Map" />
           </h2>
         </Link>
       </div>

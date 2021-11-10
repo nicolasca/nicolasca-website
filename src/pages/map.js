@@ -313,7 +313,7 @@ const Map = () => {
 
   return (
     <Layout>
-      <Seo title={intl.formatMessage({ id: "Travel" })} />
+      <Seo title={intl.formatMessage({ id: "Map" })} />
       <div
         className="Map"
         style={{ height: "100vh", width: "100%" }}

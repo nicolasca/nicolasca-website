@@ -1,8 +1,8 @@
 {
   "Home": "Accueil",
-  "Travel": "Voyage",
+  "Map": "Carte",
   "Resume": "CV",
-  "Photos": "Photos",
+  "Travel": "Voyage",
   "Random": "Aléatoire",
   "Web Developer": "Développeur Web",
   "Skills": "Compétences",
@@ -10,5 +10,6 @@
   "Education": "Formation",
   "Solar system at scale": "Système solaire à l'échelle",
   "no-bother-planet": "Je n'ai pas pris la peine d'ajouter les autres planètes, étant donné qu'elles sortent de l'écran...",
-  "years": "ans"
+  "years": "ans",
+  "Japan": "Japon"
 }

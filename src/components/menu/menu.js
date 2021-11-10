@@ -45,13 +45,13 @@ const MenuDesktop = () => {
           </Link>
         </div>
         <div>
-          <Link to="/photos/" activeStyle={activeStyle}>
-            <FormattedMessage id="Photos" />
+          <Link to="/travel/" activeStyle={activeStyle}>
+            <FormattedMessage id="Travel" />
           </Link>
         </div>
         <div>
           <Link to="/map/" activeStyle={activeStyle}>
-            <FormattedMessage id="Travel" />
+            <FormattedMessage id="Map" />
           </Link>
         </div>
         {/* <div>
@@ -143,11 +143,11 @@ const MenuMobile = () => {
       <Link to="/resume/" activeStyle={activeStyle} className="menu-item">
         <FormattedMessage id="Resume" />
       </Link>
-      <Link to="/photos/" activeStyle={activeStyle} className="menu-item">
-        <FormattedMessage id="Photos" />
+      <Link to="/travel/" activeStyle={activeStyle} className="menu-item">
+        <FormattedMessage id="Travel" />
       </Link>
       <Link to="/map/" activeStyle={activeStyle} className="menu-item">
-        <FormattedMessage id="Travel" />
+        <FormattedMessage id="Map" />
       </Link>
       <Link to="/random/" activeStyle={activeStyle} className="menu-item">
         <FormattedMessage id="Random" />
