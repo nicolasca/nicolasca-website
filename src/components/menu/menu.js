@@ -45,6 +45,11 @@ const MenuDesktop = () => {
           </Link>
         </div>
         <div>
+          <Link to="/photos/" activeStyle={activeStyle}>
+            <FormattedMessage id="Photos" />
+          </Link>
+        </div>
+        <div>
           <Link to="/map/" activeStyle={activeStyle}>
             <FormattedMessage id="Travel" />
           </Link>
@@ -137,6 +142,9 @@ const MenuMobile = () => {
       </Link>
       <Link to="/resume/" activeStyle={activeStyle} className="menu-item">
         <FormattedMessage id="Resume" />
+      </Link>
+      <Link to="/photos/" activeStyle={activeStyle} className="menu-item">
+        <FormattedMessage id="Photos" />
       </Link>
       <Link to="/map/" activeStyle={activeStyle} className="menu-item">
         <FormattedMessage id="Travel" />

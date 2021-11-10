@@ -18,63 +18,63 @@ const Map = () => {
 
   useEffect(() => {
     const birmanie = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Mingun, Birmanie"} image={"/birmanie.jpg"} />
+      <PopupContent title={"Mingun, Birmanie"} image={"/images/map/birmanie.jpg"} />
     );
 
     const indonesie = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Lombok, Indonésie"} image={"/indonesie.jpg"} />
+      <PopupContent title={"Lombok, Indonésie"} image={"/images/map/indonesie.jpg"} />
     );
 
     const laos = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Muang Ngoi, Laos"} image={"/muang-ngoi.jpg"} />
+      <PopupContent title={"Muang Ngoi, Laos"} image={"/images/map/muang-ngoi.jpg"} />
     );
 
     const yangoon = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Yangoon, Birmanie"} image={"/yangoon.jpg"} />
+      <PopupContent title={"Yangoon, Birmanie"} image={"/images/map/yangoon.jpg"} />
     );
 
     const valparaiso = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Valparaíso, Chili"} image={"/valparaiso.jpg"} />
+      <PopupContent title={"Valparaíso, Chili"} image={"/images/map/valparaiso.jpg"} />
     );
 
     const uyuni = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Salar de Uyuni, Bolivie"} image={"/uyuni.jpg"} />
+      <PopupContent title={"Salar de Uyuni, Bolivie"} image={"/images/map/uyuni.jpg"} />
     );
 
     const mekong = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Mekong, Laos"} image={"/mekong.jpg"} />
+      <PopupContent title={"Mekong, Laos"} image={"/images/map/mekong.jpg"} />
     );
 
     const kyoto = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Kyoto, Japon"} image={"/kyoto.jpg"} />
+      <PopupContent title={"Kyoto, Japon"} image={"/images/map/kyoto.jpg"} />
     );
 
     const kamaguchi = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Lac Kawaguchi, Japon"} image={"/kawaguchi.jpg"} />
+      <PopupContent title={"Lac Kawaguchi, Japon"} image={"/images/map/kawaguchi.jpg"} />
     );
 
     const santiago = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Santiago, Chili"} image={"/santiago.jpg"} />
+      <PopupContent title={"Santiago, Chili"} image={"/images/map/santiago.jpg"} />
     );
 
     const machuPicchu = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Machu Picchu, Pérou"} image={"/machuPicchu.jpg"} />
+      <PopupContent title={"Machu Picchu, Pérou"} image={"/images/map/machuPicchu.jpg"} />
     );
 
     const kissamos = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Kissamos, Crète"} image={"/kissamos.jpg"} />
+      <PopupContent title={"Kissamos, Crète"} image={"/images/map/kissamos.jpg"} />
     );
 
     const baliCr = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Bali, Crète"} image={"/baliCr.jpg"} />
+      <PopupContent title={"Bali, Crète"} image={"/images/map/baliCr.jpg"} />
     );
 
     const mingun2 = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Mingun, Birmani"} image={"/mingun2.jpg"} />
+      <PopupContent title={"Mingun, Birmani"} image={"/images/map/mingun2.jpg"} />
     );
 
     const strasbourg = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Strasbourg, France"} image={"/strasbourg.jpg"} />
+      <PopupContent title={"Strasbourg, France"} image={"/images/map/strasbourg.jpg"} />
     );
 
     const geojson = {
