@@ -1,6 +1,8 @@
 name: Lighthouse CI Action
 
-on: push
+on: 
+  push:
+      branches: [ master ]
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
