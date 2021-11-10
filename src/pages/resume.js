@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import { FormattedMessage, useIntl } from "gatsby-plugin-intl";
 import ExperienceItem from "../components/ExperienceItem";
 import Layout from "../components/layout/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import "../styles/pages/Resume.scss";
 import Icon from "../images/nicolas.svg";
 
@@ -11,7 +11,7 @@ const ResumePage = () => {
   const intl = useIntl();
   return (
     <Layout>
-      <SEO title={intl.formatMessage({ id: "Home" })} />
+      <Seo title={intl.formatMessage({ id: "Home" })} />
       <div className="Resume">
         <div className="Title">
           <Icon />

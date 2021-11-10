@@ -1,7 +1,7 @@
 import React from "react";
 import { useIntl, FormattedMessage } from "gatsby-plugin-intl";
 import Layout from "../components/layout/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import SolarSystem from "../components/solar-system/solar-system";
 import HogwartsExpress from "../components/hogwarts-express/hogwarts-express";
 import "../styles/pages/random.scss";
@@ -10,7 +10,7 @@ const RandomPage = () => {
   const intl = useIntl();
   return (
     <Layout>
-      <SEO title={intl.formatMessage({ id: "Random" })} />
+      <Seo title={intl.formatMessage({ id: "Random" })} />
       <div className="RandomContainer">
         <section className="space">
           <h2>

@@ -1,9 +1,10 @@
 import React from "react";
 import mapboxgl from "mapbox-gl";
+import Proptypes from "prop-types";
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
 import { useIntl } from "gatsby-plugin-intl";
 import Layout from "../components/layout/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import "../styles/pages/Map.scss";
 import "../styles/mapbox-gl.css";
 import "../styles/mapbox-geocoder.css";
@@ -312,7 +313,7 @@ const Map = () => {
 
   return (
     <Layout>
-      <SEO title={intl.formatMessage({ id: "Travel" })} />
+      <Seo title={intl.formatMessage({ id: "Travel" })} />
       <div
         className="Map"
         style={{ height: "100vh", width: "100%" }}
@@ -323,8 +324,6 @@ const Map = () => {
 };
 
 export default Map;
-
-import Proptypes from "prop-types";
 
 const PopupContent = ({ title, image }) => {
   return (
