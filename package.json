@@ -33,6 +33,14 @@
     "react-transition-group": "^4.4.1",
     "scrollama": "^2.2.1"
   },
+  "resolutions": {
+    "ansi-regex": "5.0.1",
+    "nth-check": "2.0.1",
+    "set-value": "4.0.1",
+    "immer": "9.0.6",
+    "object-path": "0.11.8",
+    "ansi-html": "https://registry.npmjs.org/ansi-html-community/-/ansi-html-community-0.0.8.tgz"
+  },
   "devDependencies": {
     "prettier": "^2.4.0"
   },
