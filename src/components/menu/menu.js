@@ -10,14 +10,13 @@ import {
   Languages,
   Active,
 } from "./Menu.module.scss";
+import { slide as Slidebar } from "react-burger-menu";
 
 const activeStyle = {
   color: "#c90000",
   fontWeight: "bold",
 };
-
 const supportedLocales = ["fr", "en"];
-
 const Menu = () => {
   return (
     <>
@@ -30,10 +29,8 @@ const Menu = () => {
     </>
   );
 };
-
 const MenuDesktop = () => {
   const { locale } = useIntl();
-
   return (
     <header className={Header}>
       <div className={LeftSection}>
@@ -60,14 +57,12 @@ const MenuDesktop = () => {
           Une histoire en Birmanie
         </Link>
       </div> */}
-
         <div>
           <Link to="/random/" activeStyle={activeStyle}>
             <FormattedMessage id="Random" />
           </Link>
         </div>
       </div>
-
       <div className={Languages}>
         {supportedLocales.map(lng => (
           <div key={lng} className={lng === locale ? Active : ""}>
@@ -84,7 +79,6 @@ const MenuDesktop = () => {
     </header>
   );
 };
-
 const MenuMobile = () => {
   var stylesMenu = {
     bmBurgerButton: {
@@ -129,11 +123,10 @@ const MenuMobile = () => {
       background: "rgba(0, 0, 0, 0.3)",
     },
   };
-
   const { locale } = useIntl();
 
   return (
-    <div
+    <Slidebar
       id="stack"
       styles={stylesMenu}
       outerContainerId={"outer-container"}
@@ -166,16 +159,14 @@ const MenuMobile = () => {
           ))}
         </div>
       </div>
-    </div>
+    </Slidebar>
   );
 };
 
 Menu.propTypes = {
   siteTitle: PropTypes.string,
 };
-
 Menu.defaultProps = {
   siteTitle: ``,
 };
-
 export default Menu;
