@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../styles/pages/birmanie-story.scss";
 import Layout from "../components/layout/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import mapboxgl from "mapbox-gl";
 import scrollama from "scrollama";
 import PropTypes from "prop-types";
@@ -117,7 +117,7 @@ class BirmanyStorypage extends Component {
     const currentChapterID = this.state.currentChapter.id;
     return (
       <Layout>
-        <SEO title="Une histoire en Birmanie" />
+        <Seo title="Une histoire en Birmanie" />
         <div
           ref={el => (this.mapContainer = el)}
           className="absolute top right left bottom story-map"

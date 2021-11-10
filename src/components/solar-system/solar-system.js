@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./solar-system.scss";
 import Rocket from "../../images/rocket.svg";
 
@@ -72,8 +73,6 @@ const SolarSystem = () => {
 };
 
 export default SolarSystem;
-
-import PropTypes from "prop-types";
 
 export const SVGEllipsis = ({ distancePixel }) => {
   return (

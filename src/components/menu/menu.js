@@ -1,21 +1,31 @@
-import { Link, useI18next, Trans } from "gatsby-plugin-react-i18next";
+import { Link, useIntl, FormattedMessage } from "gatsby-plugin-intl";
 import PropTypes from "prop-types";
 import React from "react";
-import styles from "./Menu.module.scss";
+import {
+  MenuDesktop as MenuDesktopWrapper,
+  MenuMobile as MenuMobileWrapper,
+  Header,
+  HeaderMobile,
+  LeftSection,
+  Languages,
+  Active,
+} from "./Menu.module.scss";
 import { slide as Slidebar } from "react-burger-menu";
 
 const activeStyle = {
   color: "#c90000",
-  fontWeight: "bold"
+  fontWeight: "bold",
 };
+
+const supportedLocales = ["fr", "en"];
 
 const Menu = () => {
   return (
     <>
-      <div className={styles.MenuDesktop}>
+      <div className={MenuDesktopWrapper}>
         <MenuDesktop />
       </div>
-      <div className={styles.MenuMobile}>
+      <div className={MenuMobileWrapper}>
         <MenuMobile />
       </div>
     </>
@@ -23,24 +33,24 @@ const Menu = () => {
 };
 
 const MenuDesktop = () => {
-  const { languages, language, originalPath } = useI18next();
+  const { locale } = useIntl();
 
   return (
-    <header className={styles.Header}>
-      <div className={styles.LeftSection}>
+    <header className={Header}>
+      <div className={LeftSection}>
         <div>
           <Link to="/" activeStyle={activeStyle}>
-            <Trans>Home</Trans>
+            <FormattedMessage id="Home" />
           </Link>
         </div>
         <div>
           <Link to="/resume/" activeStyle={activeStyle}>
-            <Trans>Resume</Trans>
+            <FormattedMessage id="Resume" />
           </Link>
         </div>
         <div>
           <Link to="/map/" activeStyle={activeStyle}>
-            <Trans>Travel</Trans>
+            <FormattedMessage id="Travel" />
           </Link>
         </div>
         {/* <div>
@@ -54,17 +64,17 @@ const MenuDesktop = () => {
 
         <div>
           <Link to="/random/" activeStyle={activeStyle}>
-            <Trans>Random</Trans>
+            <FormattedMessage id="Random" />
           </Link>
         </div>
       </div>
 
-      <div className={styles.Languages}>
-        {languages.map(lng => (
-          <div key={lng} className={lng === language ? styles.Active : ""}>
+      <div className={Languages}>
+        {supportedLocales.map(lng => (
+          <div key={lng} className={lng === locale ? Active : ""}>
             <Link
               style={{ textTransform: "upperCase" }}
-              to={originalPath}
+              changelocale={lng}
               language={lng}
             >
               {lng}
@@ -120,34 +130,35 @@ const MenuMobile = () => {
       background: "rgba(0, 0, 0, 0.3)",
     },
   };
-  const { languages, language, originalPath } = useI18next();
+
+  const { locale } = useIntl();
 
   return (
     <Slidebar
       id="stack"
       styles={stylesMenu}
       outerContainerId={"outer-container"}
-      className={styles.HeaderMobile}
+      className={HeaderMobile}
     >
       <Link to="/" activeStyle={activeStyle} className="menu-item">
-        <Trans>Home</Trans>
+        <FormattedMessage id="Home" />
       </Link>
       <Link to="/resume/" activeStyle={activeStyle} className="menu-item">
-        <Trans>Resume</Trans>
+        <FormattedMessage id="Resume" />
       </Link>
       <Link to="/map/" activeStyle={activeStyle} className="menu-item">
-        <Trans>Travel</Trans>
+        <FormattedMessage id="Travel" />
       </Link>
       <Link to="/random/" activeStyle={activeStyle} className="menu-item">
-        <Trans>Random</Trans>
+        <FormattedMessage id="Random" />
       </Link>
       <div className="menu-item">
-        <div className={styles.Languages}>
-          {languages.map(lng => (
-            <div key={lng} className={lng === language ? styles.Active : ""}>
+        <div className={Languages}>
+          {supportedLocales.map(lng => (
+            <div key={lng} className={lng === locale ? Active : ""}>
               <Link
                 style={{ textTransform: "upperCase" }}
-                to={originalPath}
+                changelocale={lng}
                 language={lng}
               >
                 {lng}

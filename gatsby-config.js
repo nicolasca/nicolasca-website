@@ -22,8 +22,8 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -35,13 +35,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-theme-blog`,
-      options: {
-        // basePath defaults to `/`
-        basePath: `/blog`,
-      },
-    },
-    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
@@ -49,47 +42,23 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: "gatsby-plugin-prettier-eslint",
-      options: {
-        prettier: {
-          patterns: [
-            // the pattern "**/*.{js,jsx,ts,tsx}" is not used because we will rely on `eslint --fix`
-            "**/*.{css,scss,less}",
-            "**/*.{json,json5}",
-            "**/*.{graphql}",
-            "**/*.{md,mdx}",
-            "**/*.{html}",
-            "**/*.{yaml,yml}",
-          ],
-        },
-        eslint: {
-          patterns: "**/*.{js,jsx,ts,tsx}",
-          customOptions: {
-            fix: true,
-            cache: true,
-          },
-        },
-      },
-    },
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-react-i18next`,
+      resolve: `gatsby-plugin-intl`,
       options: {
+        // language JSON resource path
         path: `${__dirname}/locales`,
+        // supported language
         languages: [`fr`, `en`],
+        // language file path
         defaultLanguage: `fr`,
-
-        // you can pass any i18next options
-        // pass following options to allow message content as a key
-        i18nextOptions: {
-          interpolation: {
-            escapeValue: false, // not needed for react as it escapes by default
-          },
-          keySeparator: false,
-          nsSeparator: false,
-        },
+        // option to redirect to `/ko` when connecting `/`
+        redirect: true,
+        // option for use / as defaultLangauge root path. if your defaultLanguage is `ko`, when `redirectDefaultLanguageToRoot` is true, then it will not generate `/ko/xxx` pages, instead of `/xxx`
+        redirectDefaultLanguageToRoot: false,
+        // paths that you don't want to genereate locale pages, example: ["/dashboard/","/test/**"], string format is from micromatch https://github.com/micromatch/micromatch
+        ignoredPaths: [],
       },
-    }
+    },
   ],
 };
