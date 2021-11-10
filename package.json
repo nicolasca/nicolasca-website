@@ -12,10 +12,10 @@
     "gatsby-plugin-google-gtag": "^4.0.0",
     "gatsby-plugin-gtag": "^1.0.13",
     "gatsby-plugin-image": "^2.1.0",
+    "gatsby-plugin-intl": "^0.3.0",
     "gatsby-plugin-manifest": "^4.1.0",
     "gatsby-plugin-offline": "^5.1.0",
     "gatsby-plugin-react-helmet": "^5.1.0",
-    "gatsby-plugin-intl": "^0.3.0",
     "gatsby-plugin-react-svg": "^3.0.1",
     "gatsby-plugin-sass": "^5.1.0",
     "gatsby-plugin-sharp": "^4.0.0",
@@ -26,7 +26,6 @@
     "node-sass": "^6.0.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
-    "react-burger-menu": "^2.7.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-map-gl": "^5.2.7",
@@ -42,6 +41,7 @@
     "ansi-html": "https://registry.npmjs.org/ansi-html-community/-/ansi-html-community-0.0.8.tgz"
   },
   "devDependencies": {
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
     "prettier": "^2.4.0"
   },
   "keywords": [

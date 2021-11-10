@@ -10,7 +10,6 @@ import {
   Languages,
   Active,
 } from "./Menu.module.scss";
-import { slide as Slidebar } from "react-burger-menu";
 
 const activeStyle = {
   color: "#c90000",
@@ -134,7 +133,7 @@ const MenuMobile = () => {
   const { locale } = useIntl();
 
   return (
-    <Slidebar
+    <div
       id="stack"
       styles={stylesMenu}
       outerContainerId={"outer-container"}
@@ -167,7 +166,7 @@ const MenuMobile = () => {
           ))}
         </div>
       </div>
-    </Slidebar>
+    </div>
   );
 };
 
