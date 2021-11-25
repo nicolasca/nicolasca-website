@@ -37,7 +37,10 @@ const TravelPage = () => {
       <Seo title={intl.formatMessage({ id: "Travel" })} />
       <Block>
         <LocationWrapper>
-          <StaticImage src="../images/travel/japan.jpeg" />
+          <StaticImage
+            src="../images/travel/japan.jpeg"
+            alt="Restaurant in Tokyo"
+          />
           <Title>
             <Link to="/travel/japan/">
               <FormattedMessage id={"Japan"} />

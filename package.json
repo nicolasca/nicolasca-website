@@ -9,6 +9,7 @@
     "@mapbox/mapbox-gl-geocoder": "^4.6.0",
     "@mdx-js/react": "^1.6.16",
     "babel-plugin-styled-components": "^1.13.3",
+    "blobity": "^0.1.7",
     "gatsby": "^4.1.0",
     "gatsby-plugin-google-gtag": "^4.0.0",
     "gatsby-plugin-gtag": "^1.0.13",
