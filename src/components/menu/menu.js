@@ -1,6 +1,6 @@
-import { Link, useIntl, FormattedMessage } from "gatsby-plugin-intl";
-import PropTypes from "prop-types";
-import React from "react";
+import { Link, useIntl, FormattedMessage } from "gatsby-plugin-intl"
+import PropTypes from "prop-types"
+import React from "react"
 import {
   MenuDesktop as MenuDesktopWrapper,
   MenuMobile as MenuMobileWrapper,
@@ -9,14 +9,15 @@ import {
   LeftSection,
   Languages,
   Active,
-} from "./Menu.module.scss";
-import { slide as Slidebar } from "react-burger-menu";
+  ActiveLink,
+} from "./Menu.module.scss"
+import { slide as Slidebar } from "react-burger-menu"
 
 const activeStyle = {
   color: "#c90000",
   fontWeight: "bold",
-};
-const supportedLocales = ["fr", "en"];
+}
+const supportedLocales = ["fr", "en"]
 const Menu = () => {
   return (
     <>
@@ -27,10 +28,10 @@ const Menu = () => {
         <MenuMobile />
       </div>
     </>
-  );
-};
+  )
+}
 const MenuDesktop = () => {
-  const { locale } = useIntl();
+  const { locale } = useIntl()
   return (
     <header className={Header}>
       <div className={LeftSection}>
@@ -45,7 +46,13 @@ const MenuDesktop = () => {
           </Link>
         </div>
         <div>
-          <Link to="/travel/" activeStyle={activeStyle}>
+          <Link
+            getProps={({ isPartiallyCurrent }) =>
+              isPartiallyCurrent ? { className: ActiveLink } : null
+            }
+            to="/travel/"
+            activeStyle={activeStyle}
+          >
             <FormattedMessage id="Travel" />
           </Link>
         </div>
@@ -82,8 +89,8 @@ const MenuDesktop = () => {
         ))}
       </div>
     </header>
-  );
-};
+  )
+}
 const MenuMobile = () => {
   var stylesMenu = {
     bmBurgerButton: {
@@ -127,8 +134,8 @@ const MenuMobile = () => {
     bmOverlay: {
       background: "rgba(0, 0, 0, 0.3)",
     },
-  };
-  const { locale } = useIntl();
+  }
+  const { locale } = useIntl()
 
   return (
     <Slidebar
@@ -168,13 +175,13 @@ const MenuMobile = () => {
         </div>
       </div>
     </Slidebar>
-  );
-};
+  )
+}
 
 Menu.propTypes = {
   siteTitle: PropTypes.string,
-};
+}
 Menu.defaultProps = {
   siteTitle: ``,
-};
-export default Menu;
+}
+export default Menu

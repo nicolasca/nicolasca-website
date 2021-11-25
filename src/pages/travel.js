@@ -1,43 +1,52 @@
-import React from "react";
+import React from "react"
 import styled from "styled-components"
-import { StaticImage } from "gatsby-plugin-image";
-import { useIntl, FormattedMessage, Link } from "gatsby-plugin-intl";
-import Layout from "../components/layout/layout";
-import Seo from "../components/seo";
+import { StaticImage } from "gatsby-plugin-image"
+import { useIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
+import Layout from "../components/layout/layout"
+import Seo from "../components/seo"
 
 const Block = styled.div`
   display: block;
   margin: auto;
-  max-width: 700px;
   flex-direction: column;
   background-color: #fff;
   margin-top: 1rem;
-`;
+`
 
 const LocationWrapper = styled.div`
-    display: flex;
-    
-    & > * {
-        flex-basis: 50%;
-        flex-shrink: 0;
-    }
-`;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > * {
+    flex-basis: 50%;
+    flex-shrink: 0;
+  }
+`
+
+const Title = styled.h2`
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+`
 
 const TravelPage = () => {
-    const intl = useIntl();
-    return(
-        <Layout>
-            <Seo title={intl.formatMessage({ id: "Travel" })} />
-                <Block>
-                    <LocationWrapper>
-                        <StaticImage src="../images/travel/japan.jpeg" />
-                        <Link to="/travel/japan/" >
-                            <FormattedMessage id={"Japan"} />
-                        </Link>
-                    </LocationWrapper>
-                </Block>
-        </Layout>
-    );
-};
+  const intl = useIntl()
+  return (
+    <Layout>
+      <Seo title={intl.formatMessage({ id: "Travel" })} />
+      <Block>
+        <LocationWrapper>
+          <StaticImage src="../images/travel/japan.jpeg" />
+          <Title>
+            <Link to="/travel/japan/">
+              <FormattedMessage id={"Japan"} />
+            </Link>
+          </Title>
+        </LocationWrapper>
+      </Block>
+    </Layout>
+  )
+}
 
-export default TravelPage;
+export default TravelPage
