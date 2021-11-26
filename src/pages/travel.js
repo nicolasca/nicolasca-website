@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
 import { useIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
-import Layout from "../components/layout/layout"
 import Seo from "../components/seo"
 
 const Block = styled.div`
@@ -32,8 +31,9 @@ const Title = styled.h2`
 
 const TravelPage = () => {
   const intl = useIntl()
+
   return (
-    <Layout>
+    <>
       <Seo title={intl.formatMessage({ id: "Travel" })} />
       <Block>
         <LocationWrapper>
@@ -48,7 +48,7 @@ const TravelPage = () => {
           </Title>
         </LocationWrapper>
       </Block>
-    </Layout>
+    </>
   )
 }
 

@@ -1,56 +1,43 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useContext } from "react"
 import useBlobity from "blobity/lib/useBlobity"
 import { useIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
 import styled from "styled-components"
 import Seo from "../../components/seo"
-import Layout from "../../components/layout/layout"
+import { BlobityConsumer, BlobityContext } from "../../utils/blobity.context"
 
 const Main = styled.div`
   width: 100%;
   height: 100%;
 `
 
-export const initiaBlobityOptions = {
-  licenseKey: "gmrchk",
-  focusableElementsOffsetX: 5,
-  focusableElementsOffsetY: 5,
-  color: "#c90000",
-  dotColor: "black",
-  invert: false,
-  focusableElements:
-    "[data-blobity], a:not([data-no-blobity]), button:not([data-no-blobity]), [data-blobity-tooltip]",
-  font: "'Montserrat','Source Sans Pro',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif",
-  fontSize: 14,
-  fontWeight: 400,
-  opacity: 0.7,
-  fontColor: "#ffffff",
-  zIndex: 1,
-  size: 40,
-  radius: 4,
-}
-
 const JapanPage = () => {
   const intl = useIntl()
 
-  const blobityInstance = useBlobity(initiaBlobityOptions)
+  const blobityContext = useContext(BlobityContext)
+  const blobityInstance = blobityContext.data.blobityInstance
 
   useEffect(() => {
-    if (blobityInstance.current) {
-      // @ts-ignore for debugging purposes or playing around
-      //   window.blobity = blobityInstance.current
-    }
+    if (!blobityContext.data || !blobityContext.data.blobityInstance) return
+
+    console.log("useeffect japan", blobityContext.data)
+
+    console.log(blobityInstance)
+    blobityInstance.updateOptions({ size: 50, color: "#c90000" })
+    blobityContext.set({ blobityInstance: blobityInstance })
 
     return () => {
-      //   window.blobity = null
-      blobityInstance.current.destroy()
+      blobityInstance.updateOptions({ size: 10, color: "#22A7F0" })
+      blobityContext.set({ blobityInstance: blobityInstance })
     }
-  }, [blobityInstance])
+  }, [blobityContext.data.blobityInstance, blobityContext.set])
 
   return (
-    <Layout backgroundColor="#edeee8">
+    <>
       <Seo title={intl.formatMessage({ id: "Travel" })} />
-      <Main></Main>
-    </Layout>
+      <Main>
+        <h1>Travel into the East</h1>
+      </Main>
+    </>
   )
 }
 

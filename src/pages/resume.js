@@ -1,16 +1,15 @@
-import React from "react";
-import { graphql } from "gatsby";
-import { FormattedMessage, useIntl } from "gatsby-plugin-intl";
-import ExperienceItem from "../components/ExperienceItem";
-import Layout from "../components/layout/layout";
-import Seo from "../components/seo";
-import "../styles/pages/Resume.scss";
-import Icon from "../images/nicolas.svg";
+import React from "react"
+import { graphql } from "gatsby"
+import { FormattedMessage, useIntl } from "gatsby-plugin-intl"
+import ExperienceItem from "../components/ExperienceItem"
+import Seo from "../components/seo"
+import "../styles/pages/Resume.scss"
+import Icon from "../images/nicolas.svg"
 
 const ResumePage = () => {
-  const intl = useIntl();
+  const intl = useIntl()
   return (
-    <Layout>
+    <>
       <Seo title={intl.formatMessage({ id: "Home" })} />
       <div className="Resume">
         <div className="Title">
@@ -90,11 +89,11 @@ const ResumePage = () => {
           </div>
         </div>
       </div>
-    </Layout>
-  );
-};
+    </>
+  )
+}
 
-export default ResumePage;
+export default ResumePage
 
 export const query = graphql`
   {
@@ -104,4 +103,4 @@ export const query = graphql`
       }
     }
   }
-`;
+`

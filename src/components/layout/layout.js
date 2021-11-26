@@ -5,13 +5,16 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+import React, { useEffect, useContext } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
+
 import styled from "styled-components"
-import React from "react"
 import "../../styles/global.scss"
 import "./layout.scss"
 import Menu from "../menu/menu"
+import Main from "./main"
+import { ContextProviderComponent } from "../../utils/blobity.context"
 
 const SiteContainer = styled.div`
   position: relative;
@@ -32,14 +35,16 @@ const Layout = ({ backgroundColor, children }) => {
   `)
 
   return (
-    <SiteContainer id="outer-container" backgroundColor={backgroundColor}>
-      <Menu
-        pageWrapId={"page-wrap"}
-        outerContainerId={"outer-container"}
-        siteTitle={data.site.siteMetadata.title}
-      />
-      <main id="page-wrap">{children}</main>
-    </SiteContainer>
+    <ContextProviderComponent>
+      <SiteContainer id="outer-container" backgroundColor={backgroundColor}>
+        <Menu
+          pageWrapId={"page-wrap"}
+          outerContainerId={"outer-container"}
+          siteTitle={data.site.siteMetadata.title}
+        />
+        <Main>{children}</Main>
+      </SiteContainer>
+    </ContextProviderComponent>
   )
 }
 

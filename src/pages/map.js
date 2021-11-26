@@ -1,81 +1,116 @@
-import React from "react";
-import mapboxgl from "mapbox-gl";
-import Proptypes from "prop-types";
-import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder";
-import { useIntl } from "gatsby-plugin-intl";
-import Layout from "../components/layout/layout";
-import Seo from "../components/seo";
-import "../styles/pages/Map.scss";
-import "../styles/mapbox-gl.css";
-import "../styles/mapbox-geocoder.css";
-import { useState, useEffect, useRef } from "react";
-import ReactDOMServer from "react-dom/server";
+import React from "react"
+import mapboxgl from "mapbox-gl"
+import Proptypes from "prop-types"
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
+import { useIntl } from "gatsby-plugin-intl"
+import Seo from "../components/seo"
+import "../styles/pages/Map.scss"
+import "../styles/mapbox-gl.css"
+import "../styles/mapbox-geocoder.css"
+import { useState, useEffect, useRef } from "react"
+import ReactDOMServer from "react-dom/server"
 
 const Map = () => {
-  const intl = useIntl();
-  const [map, setMap] = useState(null);
-  const mapContainer = useRef(null);
+  const intl = useIntl()
+  const [map, setMap] = useState(null)
+  const mapContainer = useRef(null)
 
   useEffect(() => {
     const birmanie = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Mingun, Birmanie"} image={"/images/map/birmanie.jpg"} />
-    );
+      <PopupContent
+        title={"Mingun, Birmanie"}
+        image={"/images/map/birmanie.jpg"}
+      />
+    )
 
     const indonesie = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Lombok, Indonésie"} image={"/images/map/indonesie.jpg"} />
-    );
+      <PopupContent
+        title={"Lombok, Indonésie"}
+        image={"/images/map/indonesie.jpg"}
+      />
+    )
 
     const laos = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Muang Ngoi, Laos"} image={"/images/map/muang-ngoi.jpg"} />
-    );
+      <PopupContent
+        title={"Muang Ngoi, Laos"}
+        image={"/images/map/muang-ngoi.jpg"}
+      />
+    )
 
     const yangoon = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Yangoon, Birmanie"} image={"/images/map/yangoon.jpg"} />
-    );
+      <PopupContent
+        title={"Yangoon, Birmanie"}
+        image={"/images/map/yangoon.jpg"}
+      />
+    )
 
     const valparaiso = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Valparaíso, Chili"} image={"/images/map/valparaiso.jpg"} />
-    );
+      <PopupContent
+        title={"Valparaíso, Chili"}
+        image={"/images/map/valparaiso.jpg"}
+      />
+    )
 
     const uyuni = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Salar de Uyuni, Bolivie"} image={"/images/map/uyuni.jpg"} />
-    );
+      <PopupContent
+        title={"Salar de Uyuni, Bolivie"}
+        image={"/images/map/uyuni.jpg"}
+      />
+    )
 
     const mekong = ReactDOMServer.renderToStaticMarkup(
       <PopupContent title={"Mekong, Laos"} image={"/images/map/mekong.jpg"} />
-    );
+    )
 
     const kyoto = ReactDOMServer.renderToStaticMarkup(
       <PopupContent title={"Kyoto, Japon"} image={"/images/map/kyoto.jpg"} />
-    );
+    )
 
     const kamaguchi = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Lac Kawaguchi, Japon"} image={"/images/map/kawaguchi.jpg"} />
-    );
+      <PopupContent
+        title={"Lac Kawaguchi, Japon"}
+        image={"/images/map/kawaguchi.jpg"}
+      />
+    )
 
     const santiago = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Santiago, Chili"} image={"/images/map/santiago.jpg"} />
-    );
+      <PopupContent
+        title={"Santiago, Chili"}
+        image={"/images/map/santiago.jpg"}
+      />
+    )
 
     const machuPicchu = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Machu Picchu, Pérou"} image={"/images/map/machuPicchu.jpg"} />
-    );
+      <PopupContent
+        title={"Machu Picchu, Pérou"}
+        image={"/images/map/machuPicchu.jpg"}
+      />
+    )
 
     const kissamos = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Kissamos, Crète"} image={"/images/map/kissamos.jpg"} />
-    );
+      <PopupContent
+        title={"Kissamos, Crète"}
+        image={"/images/map/kissamos.jpg"}
+      />
+    )
 
     const baliCr = ReactDOMServer.renderToStaticMarkup(
       <PopupContent title={"Bali, Crète"} image={"/images/map/baliCr.jpg"} />
-    );
+    )
 
     const mingun2 = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Mingun, Birmani"} image={"/images/map/mingun2.jpg"} />
-    );
+      <PopupContent
+        title={"Mingun, Birmani"}
+        image={"/images/map/mingun2.jpg"}
+      />
+    )
 
     const strasbourg = ReactDOMServer.renderToStaticMarkup(
-      <PopupContent title={"Strasbourg, France"} image={"/images/map/strasbourg.jpg"} />
-    );
+      <PopupContent
+        title={"Strasbourg, France"}
+        image={"/images/map/strasbourg.jpg"}
+      />
+    )
 
     const geojson = {
       type: "geojson",
@@ -249,29 +284,29 @@ const Map = () => {
           },
         ],
       },
-    };
+    }
 
     mapboxgl.accessToken =
-      "pk.eyJ1Ijoibmljb2xhc2NhIiwiYSI6ImNqdjNlZHY2czFzbGs0M280ZXg5bHE3ZnQifQ.qvyAeDcAJiswn2VLP320Tw";
+      "pk.eyJ1Ijoibmljb2xhc2NhIiwiYSI6ImNqdjNlZHY2czFzbGs0M280ZXg5bHE3ZnQifQ.qvyAeDcAJiswn2VLP320Tw"
     const initializeMap = ({ setMap, mapContainer }) => {
       const map = new mapboxgl.Map({
         container: mapContainer.current,
         center: [-175.73219158277513, 1.2417133592737315],
         style: "mapbox://styles/nicolasca/ckdyssl1y05lt19p94phx3ipq",
         zoom: 1.5,
-      });
+      })
       // Add zoom and rotation controls to the map.
-      map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
+      map.addControl(new mapboxgl.NavigationControl(), "bottom-right")
       map.addControl(
         new MapboxGeocoder({
           accessToken: mapboxgl.accessToken,
           mapboxgl: mapboxgl,
         })
-      );
+      )
 
       map.on("load", () => {
         // Add a layer showing the places.
-        map.addSource("places", geojson);
+        map.addSource("places", geojson)
         map.addLayer({
           id: "places",
           type: "circle",
@@ -280,50 +315,50 @@ const Map = () => {
             "circle-color": "#c90000",
             "circle-radius": 5,
           },
-        });
-        setMap(map);
-        map.resize();
+        })
+        setMap(map)
+        map.resize()
 
         map.on("click", "places", e => {
-          const coordinates = e.features[0].geometry.coordinates.slice();
-          const description = e.features[0].properties.description;
+          const coordinates = e.features[0].geometry.coordinates.slice()
+          const description = e.features[0].properties.description
 
           new mapboxgl.Popup({ className: "popup", anchor: "top" })
             .setLngLat(coordinates)
             .setHTML(description)
-            .addTo(map);
-        });
+            .addTo(map)
+        })
 
         // Change the cursor to a pointer when the mouse is over the places layer.
-        map.on("mouseenter", "places", function() {
-          map.getCanvas().style.cursor = "pointer";
-        });
+        map.on("mouseenter", "places", function () {
+          map.getCanvas().style.cursor = "pointer"
+        })
 
         // Change it back to a pointer when it leaves.
-        map.on("mouseleave", "places", function() {
-          map.getCanvas().style.cursor = "";
-        });
-      });
-    };
+        map.on("mouseleave", "places", function () {
+          map.getCanvas().style.cursor = ""
+        })
+      })
+    }
 
     if (!map) {
-      initializeMap({ setMap, mapContainer });
+      initializeMap({ setMap, mapContainer })
     }
-  }, [map]);
+  }, [map])
 
   return (
-    <Layout>
+    <>
       <Seo title={intl.formatMessage({ id: "Map" })} />
       <div
         className="Map"
         style={{ height: "100vh", width: "100%" }}
         ref={el => (mapContainer.current = el)}
       />
-    </Layout>
-  );
-};
+    </>
+  )
+}
 
-export default Map;
+export default Map
 
 const PopupContent = ({ title, image }) => {
   return (
@@ -333,10 +368,10 @@ const PopupContent = ({ title, image }) => {
         <img style={{ maxWidth: "min(600px, 90vw)" }} src={image} alt="" />
       </p>
     </>
-  );
-};
+  )
+}
 
 PopupContent.propTypes = {
   title: Proptypes.string,
   image: Proptypes.string,
-};
+}

@@ -1,15 +1,14 @@
-import React from "react";
-import { useIntl, FormattedMessage } from "gatsby-plugin-intl";
-import Layout from "../components/layout/layout";
-import Seo from "../components/seo";
-import SolarSystem from "../components/solar-system/solar-system";
-import HogwartsExpress from "../components/hogwarts-express/hogwarts-express";
-import "../styles/pages/random.scss";
+import React from "react"
+import { useIntl, FormattedMessage } from "gatsby-plugin-intl"
+import Seo from "../components/seo"
+import SolarSystem from "../components/solar-system/solar-system"
+import HogwartsExpress from "../components/hogwarts-express/hogwarts-express"
+import "../styles/pages/random.scss"
 
 const RandomPage = () => {
-  const intl = useIntl();
+  const intl = useIntl()
   return (
-    <Layout>
+    <>
       <Seo title={intl.formatMessage({ id: "Random" })} />
       <div className="RandomContainer">
         <section className="space">
@@ -37,8 +36,8 @@ const RandomPage = () => {
           <HogwartsExpress></HogwartsExpress>
         </section>
       </div>
-    </Layout>
-  );
-};
+    </>
+  )
+}
 
-export default RandomPage;
+export default RandomPage

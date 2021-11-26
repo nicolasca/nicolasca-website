@@ -45,6 +45,12 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout/layout.js`),
+      },
+    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-intl`,
@@ -64,4 +70,4 @@ module.exports = {
       },
     },
   ],
-};
+}
