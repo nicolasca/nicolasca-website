@@ -26,16 +26,14 @@ const Main = ({ children }) => {
   const blobityContext = useContext(BlobityContext)
 
   useEffect(() => {
-    if (blobityInstance.current) {
-      // @ts-ignore for debugging purposes or playing around
-      window.blobity = blobityInstance.current
-      console.log("useeffect main", blobityInstance.current)
-      blobityContext.set({ blobityInstance: blobityInstance.current })
+    const blobityInstanceCurrent = blobityInstance.current
+    if (blobityInstanceCurrent) {
+      blobityContext.set({ blobityInstance: blobityInstanceCurrent })
     }
     return () => {
-      blobityInstance.current.destroy()
+      blobityInstanceCurrent.destroy()
     }
-  }, [blobityInstance])
+  }, [blobityInstance, blobityContext.set])
 
   return <main id="page-wrap">{children}</main>
 }
