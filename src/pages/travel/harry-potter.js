@@ -20,6 +20,7 @@ const HarryPotterPage = () => {
 
   const blobityContext = useContext(BlobityContext)
   const blobityInstance = blobityContext.data.blobityInstance
+  document.querySelector("html").style.setProperty("--background", "coral")
 
   useEffect(() => {
     if (!blobityContext.data || !blobityContext.data.blobityInstance) return
@@ -43,6 +44,7 @@ const HarryPotterPage = () => {
         dotColor: "#000000",
       })
       blobityContext.set({ blobityInstance: blobityInstance })
+      document.querySelector("html").style.setProperty("--background", "white")
     }
   }, [blobityContext.data.blobityInstance, blobityContext.set])
 

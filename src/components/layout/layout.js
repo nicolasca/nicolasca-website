@@ -18,13 +18,14 @@ import {
   BlobityContext,
   ContextProviderComponent,
 } from "../../utils/blobity.context"
+import GlobalStyle from "../../styles/Global"
 
 const SiteContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   color: ${props => props.theme.fontColor || "black"};
-  background-color: ${props => props.theme.backgroundColor || "white"};
+  background-color: var(--background);
 `
 
 const Layout = ({ children }) => {
@@ -42,6 +43,7 @@ const Layout = ({ children }) => {
 
   return (
     <ContextProviderComponent>
+      <GlobalStyle />
       <SiteContainer id="outer-container" theme={blobityContext.data.theme}>
         <Menu
           pageWrapId={"page-wrap"}
