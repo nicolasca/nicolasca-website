@@ -16,6 +16,7 @@ const LocationWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 1rem;
 
   & > * {
     flex-basis: 50%;
@@ -36,6 +37,17 @@ const TravelPage = () => {
     <>
       <Seo title={intl.formatMessage({ id: "Travel" })} />
       <Block>
+        <LocationWrapper>
+          <StaticImage
+            src="../images/travel/hogwarts.jpeg"
+            alt="Le monde magique de Harry Potter"
+          />
+          <Title>
+            <Link to="/travel/harry-potter/">
+              <FormattedMessage id={"Harry Potter"} />
+            </Link>
+          </Title>
+        </LocationWrapper>
         <LocationWrapper>
           <StaticImage
             src="../images/travel/japan.jpeg"

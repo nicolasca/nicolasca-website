@@ -5,6 +5,10 @@ const defaultContextValue = {
   data: {
     // set your initial data shape here
     blobityInstance: null,
+    theme: {
+      backgroundColor: "white",
+      fontColor: "black",
+    },
   },
   set: () => {},
 }
@@ -24,6 +28,7 @@ class ContextProviderComponent extends React.Component {
   }
 
   setData(newData) {
+    console.log(newData)
     this.setState(state => ({
       data: {
         ...state.data,

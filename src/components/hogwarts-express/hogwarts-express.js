@@ -1,7 +1,9 @@
-import React from "react";
-import "./hogwarts-express.scss";
+import React from "react"
+import "./hogwarts-express.scss"
 
 const HogwartsExpress = () => {
+  const today = new Date()
+  const formattedDate = `${today.getDate()}/${today.getMonth()}/${today.getFullYear()}`
   return (
     <div className="container">
       <div className="main-ticket">
@@ -20,7 +22,7 @@ const HogwartsExpress = () => {
         </div>
         <div className="date info-box">
           <span>Date</span>
-          <span>12/07/2019</span>
+          <span>{formattedDate}</span>
         </div>
         <div className="time info-box">
           <span>Time</span>
@@ -77,7 +79,7 @@ const HogwartsExpress = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HogwartsExpress;
+export default HogwartsExpress

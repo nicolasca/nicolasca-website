@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from "react"
 import PropTypes from "prop-types"
+import styled from "styled-components"
 import useBlobity from "blobity/lib/useBlobity"
 import { BlobityContext } from "../../utils/blobity.context"
 
@@ -29,6 +30,7 @@ const Main = ({ children }) => {
     const blobityInstanceCurrent = blobityInstance.current
     if (blobityInstanceCurrent) {
       blobityContext.set({ blobityInstance: blobityInstanceCurrent })
+      console.log(blobityContext)
     }
     return () => {
       blobityInstanceCurrent.destroy()

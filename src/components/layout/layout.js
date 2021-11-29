@@ -14,16 +14,20 @@ import "../../styles/global.scss"
 import "./layout.scss"
 import Menu from "../menu/menu"
 import Main from "./main"
-import { ContextProviderComponent } from "../../utils/blobity.context"
+import {
+  BlobityContext,
+  ContextProviderComponent,
+} from "../../utils/blobity.context"
 
 const SiteContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: ${props => props.backgroundColor || "white"};
+  color: ${props => props.theme.fontColor || "black"};
+  background-color: ${props => props.theme.backgroundColor || "white"};
 `
 
-const Layout = ({ backgroundColor, children }) => {
+const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -34,9 +38,11 @@ const Layout = ({ backgroundColor, children }) => {
     }
   `)
 
+  const blobityContext = useContext(BlobityContext)
+
   return (
     <ContextProviderComponent>
-      <SiteContainer id="outer-container" backgroundColor={backgroundColor}>
+      <SiteContainer id="outer-container" theme={blobityContext.data.theme}>
         <Menu
           pageWrapId={"page-wrap"}
           outerContainerId={"outer-container"}
