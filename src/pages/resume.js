@@ -3,27 +3,70 @@ import { graphql } from "gatsby"
 import { FormattedMessage, useIntl } from "gatsby-plugin-intl"
 import ExperienceItem from "../components/ExperienceItem"
 import Seo from "../components/seo"
-import "../styles/pages/Resume.scss"
 import Icon from "../images/nicolas.svg"
+import styled from "styled-components"
+
+const Resume = styled.div`
+  display: block;
+  margin: auto;
+  max-width: 700px;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 1rem;
+
+  & > * {
+    margin: 1rem;
+    padding: -1rem;
+  }
+`
+
+const Face = styled(Icon)`
+  width: 200px;
+  margin-right: 1rem;
+
+  &:hover {
+    cursor: crosshair;
+    .Lips {
+      fill: blue;
+      transition: fill 0.5s ease;
+    }
+  }
+
+  .Lips {
+    transition: fill 0.5s ease;
+  }
+`
+
+const Skills = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+const Title = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+const JobTitle = styled.h2`
+  color: blue;
+`
 
 const ResumePage = () => {
   const intl = useIntl()
   return (
     <>
       <Seo title={intl.formatMessage({ id: "Home" })} />
-      <div className="Resume">
-        <div className="Title">
-          <Icon />
+      <Resume>
+        <Title>
+          <Face />
 
           <div>
             <h1>Nicolas Castejon</h1>
-            <h2 className="JobTitle">
-              {intl.formatMessage({ id: "Web Developer" })}
-            </h2>
+            <JobTitle>{intl.formatMessage({ id: "Web Developer" })}</JobTitle>
           </div>
-        </div>
+        </Title>
 
-        <div className="Skills">
+        <Skills>
           <h2>
             <FormattedMessage id="Skills" />{" "}
           </h2>
@@ -31,9 +74,9 @@ const ResumePage = () => {
             <p>Javascript, HTML, CSS</p>
             <p>Frameworks & libs:ReactJS, Angular 2+, </p>
           </div>
-        </div>
+        </Skills>
 
-        <div className="Experience">
+        <div>
           <h2>
             <FormattedMessage id="Experience" />
             <small>
@@ -88,7 +131,7 @@ const ResumePage = () => {
             <p>Université de Lyon</p>
           </div>
         </div>
-      </div>
+      </Resume>
     </>
   )
 }
