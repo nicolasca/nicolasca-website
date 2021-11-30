@@ -37,6 +37,7 @@ const HarryPotterPage = () => {
       }
     })
 
+    // Change theme to harry potter
     const documentSelector = document.querySelector("html")
     documentSelector.style.setProperty(
       "--backgroundColor",

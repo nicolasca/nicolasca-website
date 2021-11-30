@@ -1,15 +1,16 @@
 import React from "react"
 import { useIntl, FormattedMessage, Link } from "gatsby-plugin-intl"
 import styled from "styled-components"
+import { colors } from "../../styles/Theme"
 
 export const MenuDesktop = () => {
   const { locale } = useIntl()
   const supportedLocales = ["fr", "en"]
 
   const activeStyle = {
-    color: "#c90000",
+    color: colors.red,
     fontWeight: "bold",
-    borderBottom: "3px solid #c90000"
+    borderBottom: `3px solid ${colors.red}`
   }
 
   const Header = styled.header`
@@ -24,14 +25,13 @@ export const MenuDesktop = () => {
     }
 
     a:hover {
-      border-bottom: 3px solid #c90000;
+      border-bottom: 3px solid ${colors.red};
     }
 
     a,
     a:hover,
     a:visited,
     a:active {
-      color: unset;
       text-decoration: unset;
     }
   `
@@ -58,7 +58,7 @@ export const MenuDesktop = () => {
     }
 
     &.Active {
-      background-color: #c90000;
+      background-color: ${colors.red};
       a {
         color: white;
       }
