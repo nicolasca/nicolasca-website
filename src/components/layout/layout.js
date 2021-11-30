@@ -5,12 +5,11 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useEffect, useContext } from "react"
+import React, { useContext } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 
 import styled from "styled-components"
-import "../../styles/global.scss"
 import "./layout.scss"
 import Menu from "../menu/menu"
 import Main from "./main"

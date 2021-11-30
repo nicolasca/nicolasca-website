@@ -1,17 +1,15 @@
-export const darkTheme = {
-  backgroundColor: "#333333",
-  textColor: "#000000",
+export const defaultTheme = {
+  backgroundColor: "hsl(0deg, 100%, 100%)",
+  textColor: "hsl(240deg, 10%, 10%)",
   primary: "#77ccdd",
 }
 
-export const lightTheme = {
-  backgroundColor: "#e0e0e0",
-  textColor: "#ffffff",
+export const harryPotterTheme = {
+  backgroundColor: "hsl(240deg, 10%, 10%)",
+  textColor: "hsl(0deg, 100%, 100%)",
   primary: "#55aacc",
 }
 
-export const partyTheme = {
-  backgroundColor: "#eeff00",
-  textColor: "#ff88cc",
-  primary: "#aa00ee",
+export const blobityStyle = {
+  color: "#22A7F0",
 }

@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Seo from "../../components/seo"
 import { BlobityContext } from "../../utils/blobity.context"
 import HogwartsExpress from "../../components/hogwarts-express/hogwarts-express"
+import { defaultTheme, harryPotterTheme } from "../../styles/Theme"
 
 const Main = styled.div`
   width: 100%;
@@ -20,7 +21,12 @@ const HarryPotterPage = () => {
 
   const blobityContext = useContext(BlobityContext)
   const blobityInstance = blobityContext.data.blobityInstance
-  document.querySelector("html").style.setProperty("--background", "coral")
+  const documentSelector = document.querySelector("html")
+  documentSelector.style.setProperty(
+    "--backgroundColor",
+    harryPotterTheme.backgroundColor
+  )
+  documentSelector.style.setProperty("--textColor", harryPotterTheme.textColor)
 
   useEffect(() => {
     if (!blobityContext.data || !blobityContext.data.blobityInstance) return
@@ -42,9 +48,14 @@ const HarryPotterPage = () => {
         size: 10,
         color: "#22A7F0",
         dotColor: "#000000",
+        invert: false,
       })
       blobityContext.set({ blobityInstance: blobityInstance })
-      document.querySelector("html").style.setProperty("--background", "white")
+      documentSelector.style.setProperty(
+        "--backgroundColor",
+        defaultTheme.backgroundColor
+      )
+      documentSelector.style.setProperty("--textColor", defaultTheme.textColor)
     }
   }, [blobityContext.data.blobityInstance, blobityContext.set])
 

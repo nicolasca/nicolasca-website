@@ -8,7 +8,6 @@ const Block = styled.div`
   display: block;
   margin: auto;
   flex-direction: column;
-  background-color: #fff;
   margin-top: 1rem;
 `
 

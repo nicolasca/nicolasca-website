@@ -1,5 +1,3 @@
-@import "../../styles/variables.scss";
-
 .MenuDesktop {
   display: block;
 }
@@ -21,10 +19,17 @@
 .Header {
   display: flex;
   align-items: center;
-  color: black;
   height: 100%;
   justify-content: space-between;
   padding: 0.5rem 1rem;
+
+  h1 a {
+    font-size: 1.8rem;
+  }
+
+  a {
+    font-size: 1.2rem;
+  }
 
   a,
   a:hover,
@@ -36,7 +41,7 @@
 
   a:hover,
   .Active a {
-    border-bottom: 3px solid $red;
+    border-bottom: 3px solid #c90000;
   }
 
   a.ActiveLink {
@@ -46,7 +51,7 @@
 
   .Languages {
     div.Active a {
-      background-color: $red;
+      background-color: #c90000;
     }
   }
 }
@@ -54,7 +59,7 @@
 .HeaderMobile {
   a:hover,
   a:active {
-    color: $red !important;
+    color: #c90000 !important;
     background-color: #fff;
     text-decoration: unset;
   }
@@ -77,13 +82,13 @@
   }
 
   a {
-    color: black;
+    // color: black;
     padding: 0.2rem;
     border-bottom: 3px solid #fff;
   }
 
   div.Active {
-    background-color: $red;
+    background-color: #c90000;
     a {
       color: white;
     }

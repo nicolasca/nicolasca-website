@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import { defaultTheme } from "./Theme"
 
 const GlobalStyle = createGlobalStyle`
     /*
@@ -53,13 +54,34 @@ const GlobalStyle = createGlobalStyle`
     #root, #__next {
     isolation: isolate;
     }
-    html {
-        --background: white;
 
+    /*
+    
+    */
+    @font-face {
+        font-family: "Font Name";
+        src: url("../fonts/fontname.woff2");
+    }
+
+    html {
+        --backgroundColor: ${defaultTheme.backgroundColor};
+        --textColor: ${defaultTheme.textColor};
+        --header-height: 4rem;
+        --red: hsl(0deg, 100%, 39%);
+       --blue: #0b48f0;
+       --black: ${defaultTheme.textColor};
     }
     body {
-        background-color: var(--background);
+        color: var(--textColor);
+        background-color: var(--backgroundColor);
     }
+
+    span, a, p {
+        font-family: "Recursive", "monospace", "Open Sans Regular";
+        color: var(--textColor);
+    }
+
+    
 `
 
 export default GlobalStyle

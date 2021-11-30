@@ -1,5 +1,3 @@
-@import "../variables.scss";
-
 .Resume {
   display: block;
   margin: auto;
@@ -26,13 +24,13 @@
 .Face:hover {
   cursor: crosshair;
   .Lips {
-    fill: $blue;
+    fill: blue;
     transition: fill 0.5s ease;
   }
 }
 
 h2.JobTitle {
-  color: $blue;
+  color: blue;
 }
 
 .Title {
@@ -47,7 +45,3 @@ h2.JobTitle {
   display: flex;
   flex-direction: column;
 }
-
-// .Home img {
-//   max-width: 200px;
-// }

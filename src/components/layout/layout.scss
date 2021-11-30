@@ -1,15 +1,13 @@
-@import "../../styles/variables.scss";
-
 .menu {
   width: 100vw;
-  height: $header-height;
+  height: var(--header-height);
 }
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(100vh - #{$header-height});
+  height: calc(100vh - #{var(--header-height)});
 }
 
 // Mobile display
