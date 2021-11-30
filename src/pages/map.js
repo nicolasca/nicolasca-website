@@ -4,11 +4,24 @@ import Proptypes from "prop-types"
 import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 import { useIntl } from "gatsby-plugin-intl"
 import Seo from "../components/seo"
-import "../styles/pages/Map.scss"
 import "../styles/mapbox-gl.css"
 import "../styles/mapbox-geocoder.css"
 import { useState, useEffect, useRef } from "react"
 import ReactDOMServer from "react-dom/server"
+import styled from "styled-components"
+
+const MapContainer = styled.div`
+  span,
+  a,
+  p {
+    font-size: 1rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    margin-top: -3rem;
+    height: calc(100vh + 3rem);
+  }
+`
 
 const Map = () => {
   const intl = useIntl()
@@ -121,169 +134,169 @@ const Map = () => {
             type: "Feature",
             properties: {
               description: birmanie,
-              icon: "attraction",
+              icon: "attraction"
             },
             geometry: {
               type: "Point",
-              coordinates: [95.99857292249919, 22.061821696465117],
-            },
+              coordinates: [95.99857292249919, 22.061821696465117]
+            }
           },
           {
             type: "Feature",
             properties: {
               description: indonesie,
-              icon: "attraction",
+              icon: "attraction"
             },
             geometry: {
               type: "Point",
-              coordinates: [116.4179790683367, -8.432149362762743],
-            },
+              coordinates: [116.4179790683367, -8.432149362762743]
+            }
           },
           {
             type: "Feature",
             properties: {
               description: laos,
-              icon: "attraction",
+              icon: "attraction"
             },
             geometry: {
               type: "Point",
-              coordinates: [102.66453208065661, 20.728733100360074],
-            },
+              coordinates: [102.66453208065661, 20.728733100360074]
+            }
           },
           {
             type: "Feature",
             properties: {
               description: yangoon,
-              icon: "attraction",
+              icon: "attraction"
             },
             geometry: {
               type: "Point",
-              coordinates: [96.17422875537767, 16.80154387117817],
-            },
+              coordinates: [96.17422875537767, 16.80154387117817]
+            }
           },
           {
             type: "Feature",
             properties: {
               description: valparaiso,
-              icon: "attraction",
+              icon: "attraction"
             },
             geometry: {
               type: "Point",
-              coordinates: [-71.61999313026931, -33.04383626697376],
-            },
+              coordinates: [-71.61999313026931, -33.04383626697376]
+            }
           },
           {
             type: "Feature",
             properties: {
               description: uyuni,
-              icon: "attraction",
+              icon: "attraction"
             },
             geometry: {
               type: "Point",
-              coordinates: [-67.01949071504167, -20.760153960506415],
-            },
+              coordinates: [-67.01949071504167, -20.760153960506415]
+            }
           },
           {
             type: "Feature",
             properties: {
               description: mekong,
-              icon: "attraction",
+              icon: "attraction"
             },
             geometry: {
               type: "Point",
-              coordinates: [101.88568155816853, 18.025211347134288],
-            },
+              coordinates: [101.88568155816853, 18.025211347134288]
+            }
           },
           {
             type: "Feature",
             properties: {
               description: kyoto,
-              icon: "attraction",
+              icon: "attraction"
             },
             geometry: {
               type: "Point",
-              coordinates: [135.75742682447276, 34.99935660831572],
-            },
+              coordinates: [135.75742682447276, 34.99935660831572]
+            }
           },
           {
             type: "Feature",
             properties: {
               description: kamaguchi,
-              icon: "attraction",
+              icon: "attraction"
             },
             geometry: {
               type: "Point",
-              coordinates: [138.7574594408178, 35.52464722872192],
-            },
+              coordinates: [138.7574594408178, 35.52464722872192]
+            }
           },
           {
             type: "Feature",
             properties: {
               description: santiago,
-              icon: "attraction",
+              icon: "attraction"
             },
             geometry: {
               type: "Point",
-              coordinates: [-70.66427120069258, -33.45002905471177],
-            },
+              coordinates: [-70.66427120069258, -33.45002905471177]
+            }
           },
           {
             type: "Feature",
             properties: {
               description: machuPicchu,
-              icon: "attraction",
+              icon: "attraction"
             },
             geometry: {
               type: "Point",
-              coordinates: [-72.54577133862249, -13.164123278828214],
-            },
+              coordinates: [-72.54577133862249, -13.164123278828214]
+            }
           },
           {
             type: "Feature",
             properties: {
               description: kissamos,
-              icon: "attraction",
+              icon: "attraction"
             },
             geometry: {
               type: "Point",
-              coordinates: [23.65346701952552, 35.49698661653943],
-            },
+              coordinates: [23.65346701952552, 35.49698661653943]
+            }
           },
           {
             type: "Feature",
             properties: {
               description: baliCr,
-              icon: "attraction",
+              icon: "attraction"
             },
             geometry: {
               type: "Point",
-              coordinates: [24.783242966933273, 35.414674826223475],
-            },
+              coordinates: [24.783242966933273, 35.414674826223475]
+            }
           },
           {
             type: "Feature",
             properties: {
               description: mingun2,
-              icon: "attraction",
+              icon: "attraction"
             },
             geometry: {
               type: "Point",
-              coordinates: [95.99984104081295, 22.08732873448838],
-            },
+              coordinates: [95.99984104081295, 22.08732873448838]
+            }
           },
           {
             type: "Feature",
             properties: {
               description: strasbourg,
-              icon: "attraction",
+              icon: "attraction"
             },
             geometry: {
               type: "Point",
-              coordinates: [7.7507127, 48.584614],
-            },
-          },
-        ],
-      },
+              coordinates: [7.7507127, 48.584614]
+            }
+          }
+        ]
+      }
     }
 
     mapboxgl.accessToken =
@@ -293,14 +306,14 @@ const Map = () => {
         container: mapContainer.current,
         center: [-175.73219158277513, 1.2417133592737315],
         style: "mapbox://styles/nicolasca/ckdyssl1y05lt19p94phx3ipq",
-        zoom: 1.5,
+        zoom: 1.5
       })
       // Add zoom and rotation controls to the map.
       map.addControl(new mapboxgl.NavigationControl(), "bottom-right")
       map.addControl(
         new MapboxGeocoder({
           accessToken: mapboxgl.accessToken,
-          mapboxgl: mapboxgl,
+          mapboxgl: mapboxgl
         })
       )
 
@@ -313,8 +326,8 @@ const Map = () => {
           source: "places",
           paint: {
             "circle-color": "#c90000",
-            "circle-radius": 5,
-          },
+            "circle-radius": 5
+          }
         })
         setMap(map)
         map.resize()
@@ -330,12 +343,12 @@ const Map = () => {
         })
 
         // Change the cursor to a pointer when the mouse is over the places layer.
-        map.on("mouseenter", "places", function () {
+        map.on("mouseenter", "places", function() {
           map.getCanvas().style.cursor = "pointer"
         })
 
         // Change it back to a pointer when it leaves.
-        map.on("mouseleave", "places", function () {
+        map.on("mouseleave", "places", function() {
           map.getCanvas().style.cursor = ""
         })
       })
@@ -349,8 +362,7 @@ const Map = () => {
   return (
     <>
       <Seo title={intl.formatMessage({ id: "Map" })} />
-      <div
-        className="Map"
+      <MapContainer
         style={{ height: "100vh", width: "100%" }}
         ref={el => (mapContainer.current = el)}
       />
@@ -373,5 +385,5 @@ const PopupContent = ({ title, image }) => {
 
 PopupContent.propTypes = {
   title: Proptypes.string,
-  image: Proptypes.string,
+  image: Proptypes.string
 }

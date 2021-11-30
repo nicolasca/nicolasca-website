@@ -9,7 +9,7 @@ export const MenuDesktop = () => {
   const activeStyle = {
     color: "#c90000",
     fontWeight: "bold",
-    borderBottom: "3px solid #c90000",
+    borderBottom: "3px solid #c90000"
   }
 
   const Header = styled.header`
@@ -21,6 +21,10 @@ export const MenuDesktop = () => {
 
     a {
       font-size: 1.2rem;
+    }
+
+    a:hover {
+      border-bottom: 3px solid #c90000;
     }
 
     a,
