@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { FormattedMessage, useIntl } from "gatsby-plugin-intl"
+import styled from "styled-components"
 import ExperienceItem from "../components/ExperienceItem"
 import Seo from "../components/seo"
 import Icon from "../images/nicolas.svg"
-import styled from "styled-components"
 
 const Resume = styled.div`
   display: block;
