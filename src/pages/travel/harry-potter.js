@@ -21,34 +21,38 @@ const HarryPotterPage = () => {
 
   const blobityContext = useContext(BlobityContext)
   const blobityInstance = blobityContext.data.blobityInstance
-  const documentSelector = document.querySelector("html")
-  documentSelector.style.setProperty(
-    "--backgroundColor",
-    harryPotterTheme.backgroundColor
-  )
-  documentSelector.style.setProperty("--textColor", harryPotterTheme.textColor)
 
   useEffect(() => {
     if (!blobityContext.data || !blobityContext.data.blobityInstance) return
-    console.log("data", blobityContext.data)
+
     blobityInstance.updateOptions({
       size: 50,
-      invert: true,
+      invert: true
     })
     blobityContext.set({ blobityInstance: blobityInstance })
     blobityContext.set({
       theme: {
         backgroudColor: "black",
-        fontColor: "white",
-      },
+        fontColor: "white"
+      }
     })
+
+    const documentSelector = document.querySelector("html")
+    documentSelector.style.setProperty(
+      "--backgroundColor",
+      harryPotterTheme.backgroundColor
+    )
+    documentSelector.style.setProperty(
+      "--textColor",
+      harryPotterTheme.textColor
+    )
 
     return () => {
       blobityInstance.updateOptions({
         size: 10,
         color: "#22A7F0",
         dotColor: "#000000",
-        invert: false,
+        invert: false
       })
       blobityContext.set({ blobityInstance: blobityInstance })
       documentSelector.style.setProperty(
