@@ -22,6 +22,20 @@ export const initiaBlobityOptions = {
   radius: 4,
 }
 
+const MainContainer = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100vh - #{var(--header-height)});
+
+  // Mobile display
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    padding-top: 3rem;
+    height: 100vh;
+  }
+`
+
 const Main = ({ children }) => {
   const blobityInstance = useBlobity(initiaBlobityOptions)
   const blobityContext = useContext(BlobityContext)
@@ -37,7 +51,7 @@ const Main = ({ children }) => {
     }
   }, [blobityInstance, blobityContext.set])
 
-  return <main id="page-wrap">{children}</main>
+  return <MainContainer id="page-wrap">{children}</MainContainer>
 }
 
 Main.propTypes = {

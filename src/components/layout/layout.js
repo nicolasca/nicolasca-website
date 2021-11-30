@@ -10,7 +10,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 
 import styled from "styled-components"
-import "./layout.scss"
 import Menu from "../menu/menu"
 import Main from "./main"
 import {
