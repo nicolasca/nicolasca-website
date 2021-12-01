@@ -1,84 +1,113 @@
 import React from "react"
-import "./hogwarts-express.scss"
+import "./hogwarts-express.styled.js"
+import {
+  Arrival,
+  BarCode,
+  BarCodeNumber,
+  BarCodeScan,
+  Car,
+  Condition,
+  Container,
+  DateLeave,
+  Departure,
+  MainTicket,
+  Passenger,
+  Platform,
+  Platform34,
+  Platform9,
+  PlatformDeparture,
+  PlatformFrom,
+  PlatformNumber,
+  PlatformPlatform,
+  RArrival,
+  RBarCode,
+  RDate,
+  RDeparture,
+  RemovableTicket,
+  RTime,
+  RTitle,
+  Time,
+  Title,
+} from "./hogwarts-express.styled.js"
 
 const HogwartsExpress = () => {
   const today = new Date()
   const formattedDate = `${today.getDate()}/${today.getMonth()}/${today.getFullYear()}`
   return (
-    <div className="container">
-      <div className="main-ticket">
-        <div className="title">Hogwarts Express</div>
-        <div className="passenger info-box">
+    <Container>
+      <MainTicket>
+        <Title>Hogwarts Express</Title>
+        <Passenger>
           <span>Passenger</span>
           <span>Hermione Granger</span>
-        </div>
-        <div className="depart info-box">
+        </Passenger>
+        <Departure>
           <span>Départ</span>
           <span>London</span>
-        </div>
-        <div className="arrival info-box">
+        </Departure>
+        <Arrival>
           <span>Arrival</span>
           <span>Hogwart</span>
-        </div>
-        <div className="date info-box">
+        </Arrival>
+        <DateLeave>
           <span>Date</span>
           <span>{formattedDate}</span>
-        </div>
-        <div className="time info-box">
+        </DateLeave>
+        <Time>
           <span>Time</span>
           <span>10:00 am</span>
-        </div>
-        <div className="car info-box">
+        </Time>
+        <Car>
           <span>Car</span>
           <span>8</span>
-        </div>
-        <div className="platform">
-          <span className="platform-depart"> Depart </span>
-          <span className="platform-from">from</span>
-          <span className="platform-platform"> platform</span>
-          <div className="platform-number">
-            <div className="platform-9">9</div>
-            <div className="platform-34">
+        </Car>
+        <Platform>
+          <PlatformDeparture> Depart </PlatformDeparture>
+          <PlatformFrom>from</PlatformFrom>
+          <PlatformPlatform> platform</PlatformPlatform>
+          <PlatformNumber>
+            <Platform9>9</Platform9>
+            <Platform34>
               <div>3</div>
               <div>4</div>
-            </div>
-          </div>
-        </div>
-        <div className="condition">
+            </Platform34>
+          </PlatformNumber>
+        </Platform>
+        <Condition>
           Boarding begins 30 minutes before departure. Snacks available for
           purchase from The Honeydukes Express. This ticket is Non-refundable •
           Hogwarts Express Railway Authority
-        </div>
-        <div className="barcode">
-          <div className="barcode-scan"></div>
-          <div className="barcode-number">435353633</div>
-        </div>
-      </div>
-      <div className="removable-ticket">
-        <div className="r-title">Hogwarts Express</div>
-        <div className="r-depart r-info">
+        </Condition>
+        <BarCode>
+          <BarCodeScan></BarCodeScan>
+          <BarCodeNumber>435353633</BarCodeNumber>
+        </BarCode>
+      </MainTicket>
+      <RemovableTicket>
+        <RTitle>Hogwarts Express</RTitle>
+        <RDeparture>
           <span>Départ</span>
           <span>London</span>
-        </div>
-        <div className="r-arrival r-info">
+        </RDeparture>
+        <RArrival>
           <span>Arrival</span>
           <span>Hogwart</span>
-        </div>
-        <div className="r-date r-info">
+        </RArrival>
+        <RDate>
           <span>Date</span>
           <span>12/07/2019</span>
-        </div>
-        <div className="r-time r-info">
+        </RDate>
+        <RTime>
           <span>Time</span>
           <span>10:00 am</span>
-        </div>
+        </RTime>
 
-        <div className="r-barcode">
-          <div className="barcode-scan"></div>
-          <div className="barcode-number">435353633</div>
-        </div>
-      </div>
-    </div>
+        <RBarCode>
+          <BarCodeScan></BarCodeScan>
+          <BarCodeNumber>435353633</BarCodeNumber>
+        </RBarCode>
+      </RemovableTicket>
+    </Container>
   )
 }
 

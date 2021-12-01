@@ -51,7 +51,6 @@ module.exports = {
         component: require.resolve(`./src/components/layout/layout.js`),
       },
     },
-    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-intl`,
       options: {

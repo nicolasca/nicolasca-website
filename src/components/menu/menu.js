@@ -1,4 +1,3 @@
-import { Link, useIntl, FormattedMessage } from "gatsby-plugin-intl"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
@@ -21,7 +20,6 @@ const MenuMobileWrapper = styled.div`
   }
 `
 
-const supportedLocales = ["fr", "en"]
 const Menu = () => {
   return (
     <>
