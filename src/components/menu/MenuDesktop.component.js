@@ -10,7 +10,7 @@ export const MenuDesktop = () => {
   const activeStyle = {
     color: colors.red,
     fontWeight: "bold",
-    borderBottom: `3px solid ${colors.red}`
+    borderBottom: `3px solid ${colors.red}`,
   }
 
   const Header = styled.header`
@@ -50,18 +50,18 @@ export const MenuDesktop = () => {
       display: flex;
       justify-content: center;
       align-items: center;
+
+      &.Active {
+        background-color: ${colors.red};
+        a {
+          color: white;
+        }
+      }
     }
 
     a {
       padding: 0.2rem;
       border-bottom: 3px solid #fff;
-    }
-
-    &.Active {
-      background-color: ${colors.red};
-      a {
-        color: white;
-      }
     }
 
     & > div:first-child {
@@ -82,7 +82,7 @@ export const MenuDesktop = () => {
             <FormattedMessage id="Resume" />
           </Link>
         </div>
-        <div>
+        {/* <div>
           <Link
             getProps={({ isPartiallyCurrent }) =>
               isPartiallyCurrent ? { className: "Active" } : null
@@ -92,7 +92,7 @@ export const MenuDesktop = () => {
           >
             <FormattedMessage id="Travel" />
           </Link>
-        </div>
+        </div> */}
         <div>
           <Link to="/map/" activeStyle={activeStyle}>
             <FormattedMessage id="Map" />

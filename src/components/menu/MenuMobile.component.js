@@ -106,9 +106,9 @@ export const MenuMobile = () => {
         <Link to="/resume/" activeStyle={activeStyle}>
           <FormattedMessage id="Resume" />
         </Link>
-        <Link to="/travel/" activeStyle={activeStyle}>
+        {/* <Link to="/travel/" activeStyle={activeStyle}>
           <FormattedMessage id="Travel" />
-        </Link>
+        </Link> */}
         <Link to="/map/" activeStyle={activeStyle}>
           <FormattedMessage id="Map" />
         </Link>

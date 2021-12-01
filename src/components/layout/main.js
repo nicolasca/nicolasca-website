@@ -3,12 +3,13 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import useBlobity from "blobity/lib/useBlobity"
 import { BlobityContext } from "../../utils/blobity.context"
+import { colors } from "../../styles/Theme"
 
 export const initiaBlobityOptions = {
   licenseKey: "gmrchk",
   focusableElementsOffsetX: 5,
   focusableElementsOffsetY: 5,
-  color: "#22A7F0",
+  color: colors.red,
   dotColor: "black",
   invert: false,
   focusableElements: "[data-blobity]",

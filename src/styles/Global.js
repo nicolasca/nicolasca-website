@@ -55,15 +55,6 @@ const GlobalStyle = createGlobalStyle`
     isolation: isolate;
     }
 
-
-    @font-face {
-      font-family: "Recursive";
-      src: url("../../static/fonts/Recursive_variable.woff2")
-        format("woff2-variations");
-      font-weight: 300 1000;
-      font-display: swap;
-}
-
     html {
         --backgroundColor: ${defaultTheme.backgroundColor};
         --textColor: ${defaultTheme.textColor};
