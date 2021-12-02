@@ -1,3 +1,29 @@
+/* CUSTOM STYLE */
+.popup {
+  max-width: unset;
+}
+
+.mapboxgl-popup {
+  max-width: unset !important;
+
+  opacity: 0;
+  animation-name: fadeInOpacity;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* END CUSTOM STYLE */
+
 .mapboxgl-map {
   font: 12px/20px Helvetica Neue, Arial, Helvetica, sans-serif;
   overflow: hidden;

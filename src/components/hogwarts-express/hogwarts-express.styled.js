@@ -1,4 +1,24 @@
-.container {
+import styled from "styled-components"
+
+const InfoBoxStyle = `
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+
+  span:first-child {
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin-bottom: 0.2em;
+  }
+
+  span:last-child {
+    font-weight: 600;
+    letter-spacing: 0.2em;
+  }
+`
+
+export const Container = styled.div`
+  color: black;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   display: grid;
@@ -6,37 +26,26 @@
   grid-template-columns: auto 140px;
   border: 2px solid black;
   border-radius: 10px;
-}
 
-.main-ticket {
+  span {
+    color: black;
+  }
+`
+
+export const MainTicket = styled.div`
   border-radius: 10px 0 0 10px;
   padding: 10px;
   background-color: #f3f1c9;
   display: grid;
   grid-template-rows: repeat(4, min-content) auto;
   grid-template-columns: repeat(8, 1fr);
-}
 
-.main-ticket > div {
-  padding: 8px;
-}
+  & > div {
+    padding: 8px;
+  }
+`
 
-.info-box {
-  display: flex;
-  flex-direction: column;
-  text-transform: uppercase;
-}
-.info-box span:first-child {
-  font-size: 0.8rem;
-  font-weight: 400;
-  margin-bottom: 0.2em;
-}
-.info-box span:last-child {
-  font-weight: 600;
-  letter-spacing: 0.2em;
-}
-
-.title {
+export const Title = styled.div`
   background-color: black;
   color: #f3f1c9;
   text-transform: uppercase;
@@ -44,53 +53,56 @@
   font-size: 2rem;
   text-align: center;
   grid-column: 1 / span 8;
-}
+`
 
-.passenger {
+export const Passenger = styled.div`
+  ${InfoBoxStyle};
   grid-column: 1 / span 6;
-}
-
-.passenger,
-.depart,
-.date {
   border-left: 3px solid black;
-}
-
-.passenger,
-.depart,
-.date,
-.arrival,
-.date,
-.time,
-.car {
   border-bottom: 3px solid black;
   border-right: 3px solid black;
-}
+`
 
-.depart {
+export const Departure = styled.div`
+  ${InfoBoxStyle};
   grid-column: 1 / span 3;
-}
+  border-left: 3px solid black;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+`
 
-.arrival {
+export const Arrival = styled.div`
+  ${InfoBoxStyle};
   grid-column: 4 / span 3;
-}
-
-.date {
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+`
+export const DateLeave = styled.div`
+  ${InfoBoxStyle};
+  border-left: 3px solid black;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
   grid-column: 1 / span 2;
   span {
     font-size: 1rem;
   }
-}
+`
 
-.time {
+export const Time = styled.div`
+  ${InfoBoxStyle};
   grid-column: 3 / span 2;
-}
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+`
 
-.car {
+export const Car = styled.div`
+  ${InfoBoxStyle};
   grid-column: 5 / span 2;
-}
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+`
 
-.platform {
+export const Platform = styled.div`
   background-color: #c02a28;
   border-bottom: 3px solid black;
   border-right: 3px solid black;
@@ -98,67 +110,67 @@
   grid-column: 7 / span 2;
   grid-row: 2 / span 3;
   text-align: center;
-}
+`
 
-.platform-depart {
+export const PlatformDeparture = styled.span`
   font-size: 1.7rem;
   font-weight: 900;
   line-height: 1;
-}
+`
 
-.platform-from {
+export const PlatformFrom = styled.span`
   font-size: 2rem;
   font-weight: 900;
   line-height: 1;
-}
+`
 
-.platform-platform {
+export const PlatformPlatform = styled.span`
   font-size: 1.1rem;
   font-weight: 900;
   line-height: 1;
-}
+`
 
-.platform-number {
+export const PlatformNumber = styled.div`
   display: flex;
   justify-content: space-evenly;
-}
+`
 
-.platform-9 {
+export const Platform9 = styled.div`
   font-size: 6rem;
   font-weight: 700;
   line-height: 1;
-}
+`
 
-.platform-34 {
+export const Platform34 = styled.div`
   font-size: 1.5rem;
   line-height: 1;
   align-self: center;
-}
 
-.platform-34 > div {
-  padding: 0.3em;
-}
+  & > div {
+    padding: 0.3em;
+  }
 
-.platform-34 > div:first-child {
-  border-bottom: 1px solid white;
-}
+  & > div:first-child {
+    border-bottom: 1px solid white;
+  }
+`
 
-.condition {
+export const Condition = styled.div`
   font-size: 12px;
   grid-row: 5;
   grid-column: 1 / span 6;
   border: 0;
-}
+`
 
-.barcode {
+export const BarCode = styled.div`
   grid-column: 7 / span 2;
   grid-row: 5;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-}
+`
 
-.barcode-scan {
+export const BarCodeScan = styled.div`
   height: 50px;
   background: linear-gradient(
     to right,
@@ -280,14 +292,14 @@
     #333 95%,
     transparent 95%
   );
-}
+`
 
-.barcode-number {
+export const BarCodeNumber = styled.div`
   color: #c02a28;
   letter-spacing: 0.3em;
-}
+`
 
-.removable-ticket {
+export const RemovableTicket = styled.div`
   border-radius: 0 10px 10px 0;
   background-color: #eac9a9;
   border-left: 1px dashed black;
@@ -297,9 +309,9 @@
   display: grid;
   grid-template-rows: repeat(2, 124px) 60px;
   grid-template-columns: 30px repeat(2, 45px);
-}
+`
 
-.r-title {
+export const RTitle = styled.div`
   grid-column: 1 / span 1;
   grid-row: 1 / span 2;
   background-color: #c02a28;
@@ -310,74 +322,61 @@
   padding: 0 0 0 5px;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
-}
+`
 
-.r-info {
+const RInfoStyle = `
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-}
-
-.r-info {
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
   padding: 5px;
-}
-.r-info span:first-child {
-  font-size: 11px;
-  font-weight: 400;
-  margin-bottom: 0.2em;
-}
-.r-info span:last-child {
-  font-size: 12px;
-  font-weight: 600;
-}
 
-.r-depart,
-.r-date {
-  border-top: 3px solid #c02a28;
-}
+  span:first-child {
+    font-size: 11px;
+    font-weight: 400;
+    margin-bottom: 0.2em;
+  }
 
-.r-depart,
-.r-date,
-.r-time,
-.r-arrival {
-  border-bottom: 3px solid #c02a28;
-}
+  span:last-child {
+    font-size: 12px;
+    font-weight: 600;
+  }
+`
 
-.r-time,
-.r-date {
-  border-right: 3px solid #c02a28;
-}
-
-.r-date,
-.r-time {
-  border-left: 3px solid #c02a28;
-}
-
-.r-depart {
+export const RDeparture = styled.div`
+  ${RInfoStyle};
   grid-row: 2 / span 1;
   grid-column: 2 / span 1;
   border-width: 3px;
-}
-
-.r-arrival {
+  border-top: 3px solid #c02a28;
+  border-bottom: 3px solid #c02a28;
+`
+export const RArrival = styled.div`
+  ${RInfoStyle};
   grid-row: 1 / span 1;
   grid-column: 2 / span 1;
-}
+  border-bottom: 3px solid #c02a28;
+`
 
-.r-date {
+export const RDate = styled.div`
+  ${RInfoStyle};
   grid-row: 2 / span 1;
   grid-column: 3 / span 1;
-}
+  border: 3px solid #c02a28;
+`
 
-.r-time {
+export const RTime = styled.div`
+  ${RInfoStyle};
   grid-row: 1 / span 1;
   grid-column: 3 / span 1;
-}
+  border-bottom: 3px solid #c02a28;
+  border-right: 3px solid #c02a28;
+  border-left: 3px solid #c02a28;
+`
 
-.r-barcode {
+export const RBarCode = styled.div`
   grid-row: 3 / span 1;
   grid-column: 1 / span 3;
   margin-top: 7px;
-}
+`

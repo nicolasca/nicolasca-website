@@ -22,8 +22,10 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -43,7 +45,12 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout/layout.js`),
+      },
+    },
     {
       resolve: `gatsby-plugin-intl`,
       options: {
@@ -61,5 +68,13 @@ module.exports = {
         ignoredPaths: [],
       },
     },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Recursive"],
+        },
+      },
+    },
   ],
-};
+}
