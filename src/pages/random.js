@@ -2,8 +2,8 @@ import React from "react"
 import { useIntl, FormattedMessage } from "gatsby-plugin-intl"
 import styled from "styled-components"
 import Seo from "../components/seo"
-import SolarSystem from "../components/solar-system/solar-system"
-import HogwartsExpress from "../components/hogwarts-express/hogwarts-express"
+import SolarSystem from "../components/SolarSystem"
+import HogwartsExpress from "../components/HogwartsExpress"
 
 const RandomContainer = styled.div`
   @media screen and (max-width: 768px) {

@@ -1,5 +1,5 @@
 import React from "react"
-import "./hogwarts-express.styled.js"
+import "./HogwartsExpress.styled.js"
 import {
   Arrival,
   BarCode,
@@ -28,7 +28,7 @@ import {
   RTitle,
   Time,
   Title,
-} from "./hogwarts-express.styled.js"
+} from "./HogwartsExpress.styled.js"
 
 const HogwartsExpress = () => {
   const today = new Date()

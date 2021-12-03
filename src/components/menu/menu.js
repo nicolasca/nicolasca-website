@@ -1,8 +1,8 @@
 import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
-import { MenuDesktop } from "./MenuDesktop.component"
-import { MenuMobile } from "./MenuMobile.component"
+import { MenuDesktop } from "./MenuDesktop"
+import { MenuMobile } from "./MenuMobile"
 
 const MenuDesktopWrapper = styled.div`
   display: block;
