@@ -1,5 +1,5 @@
-import React from "react"
-import "./HogwartsExpress.styled.js"
+import React from 'react';
+import './HogwartsExpress.styled.js';
 import {
   Arrival,
   BarCode,
@@ -28,11 +28,11 @@ import {
   RTitle,
   Time,
   Title,
-} from "./HogwartsExpress.styled.js"
+} from './HogwartsExpress.styled.js';
 
 const HogwartsExpress = () => {
-  const today = new Date()
-  const formattedDate = `${today.getDate()}/${today.getMonth()}/${today.getFullYear()}`
+  const today = new Date();
+  const formattedDate = `${today.getDate()}/${today.getMonth()}/${today.getFullYear()}`;
   return (
     <Container>
       <MainTicket>
@@ -108,7 +108,7 @@ const HogwartsExpress = () => {
         </RBarCode>
       </RemovableTicket>
     </Container>
-  )
-}
+  );
+};
 
-export default HogwartsExpress
+export default HogwartsExpress;

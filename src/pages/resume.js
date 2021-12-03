@@ -1,10 +1,10 @@
-import React from "react"
-import { graphql } from "gatsby"
-import { FormattedMessage, useIntl } from "gatsby-plugin-intl"
-import styled from "styled-components"
-import ExperienceItem from "../components/ExperienceItem"
-import Seo from "../components/seo"
-import Icon from "../images/nicolas.svg"
+import React from 'react';
+import { graphql } from 'gatsby';
+import { FormattedMessage, useIntl } from 'gatsby-plugin-intl';
+import styled from 'styled-components';
+import ExperienceItem from '../components/ExperienceItem';
+import Seo from '../components/seo';
+import FaceSVG from '../components/AnimatedSVG/FaceSVG';
 
 const Resume = styled.div`
   display: block;
@@ -18,57 +18,40 @@ const Resume = styled.div`
     margin: 1rem;
     padding: -1rem;
   }
-`
-
-const Face = styled(Icon)`
-  width: 200px;
-  margin-right: 1rem;
-
-  &:hover {
-    cursor: crosshair;
-    .Lips {
-      fill: blue;
-      transition: fill 0.5s ease;
-    }
-  }
-
-  .Lips {
-    transition: fill 0.5s ease;
-  }
-`
+`;
 
 const Skills = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
 const Title = styled.div`
   display: flex;
   align-items: center;
-`
+`;
 
 const JobTitle = styled.h2`
   color: blue;
-`
+`;
 
 const ResumePage = () => {
-  const intl = useIntl()
+  const intl = useIntl();
   return (
     <>
-      <Seo title={intl.formatMessage({ id: "Home" })} />
+      <Seo title={intl.formatMessage({ id: 'Home' })} />
       <Resume>
         <Title>
-          <Face />
+          <FaceSVG />
 
           <div>
             <h1>Nicolas Castejon</h1>
-            <JobTitle>{intl.formatMessage({ id: "Web Developer" })}</JobTitle>
+            <JobTitle>{intl.formatMessage({ id: 'Web Developer' })}</JobTitle>
           </div>
         </Title>
 
         <Skills>
           <h2>
-            <FormattedMessage id="Skills" />{" "}
+            <FormattedMessage id="Skills" />{' '}
           </h2>
           <div>
             <p>Javascript, HTML, CSS</p>
@@ -80,9 +63,9 @@ const ResumePage = () => {
           <h2>
             <FormattedMessage id="Experience" />
             <small>
-              {" (7 "}
+              {' (7 '}
               <FormattedMessage id="years" />
-              {")"}
+              {')'}
             </small>
           </h2>
           <ExperienceItem
@@ -133,10 +116,10 @@ const ResumePage = () => {
         </div>
       </Resume>
     </>
-  )
-}
+  );
+};
 
-export default ResumePage
+export default ResumePage;
 
 export const query = graphql`
   {
@@ -146,4 +129,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

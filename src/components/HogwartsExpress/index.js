@@ -1,1 +1,1 @@
-export { default } from "./HogwartsExpress"
+export { default } from './HogwartsExpress';

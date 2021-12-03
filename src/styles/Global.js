@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components"
-import { defaultTheme } from "./Theme"
+import { createGlobalStyle } from 'styled-components';
+import { defaultTheme } from './Theme';
 
 const GlobalStyle = createGlobalStyle`
     /*
@@ -73,7 +73,10 @@ const GlobalStyle = createGlobalStyle`
         color: var(--textColor);
     }
 
+    a {
+        text-decoration: none;
+    }
     
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;
