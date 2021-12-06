@@ -68,7 +68,7 @@ const GlobalStyle = createGlobalStyle`
         background-color: var(--backgroundColor);
     }
 
-    span, a, p {
+    span, a, p, h1, h2, h3, h4, h5, h6 {
         font-family: "Recursive", "monospace", "Open Sans Regular";
         color: var(--textColor);
     }

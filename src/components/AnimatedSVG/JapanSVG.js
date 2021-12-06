@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { FormattedMessage, Link } from 'gatsby-plugin-intl';
+import { Link } from 'gatsby-plugin-intl';
 import JapanMap from '../../images/japan.svg';
 
 const JapanSVG = () => {
@@ -8,9 +8,6 @@ const JapanSVG = () => {
     <Map>
       <Link to="/map/">
         <JapanMap />
-        <h2>
-          <FormattedMessage id="Map" />
-        </h2>
       </Link>
     </Map>
   );

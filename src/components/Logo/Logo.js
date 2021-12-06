@@ -4,7 +4,7 @@ import format from 'date-fns/format';
 
 const Logo = (props) => {
   return (
-    <Wrapper>
+    <Wrapper data-blobity>
       <Link href="/" {...props}>
         La Gazette
       </Link>
