@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { Suspense, useEffect, useRef } from 'react';
 import { FormattedMessage, Link } from 'gatsby-plugin-intl';
 import styled from 'styled-components/macro';
 import FaceSVG from '../components/AnimatedSVG/FaceSVG';
 import JapanSVG from '../components/AnimatedSVG/JapanSVG';
+import { MarauderMap } from '../components/MarauderMap';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
 
 const MainGrid = styled.div`
   position: relative;
@@ -42,7 +45,14 @@ const HomePage = () => {
         <Title> Un petit voyage dans le monde </Title>
         <JapanSVG />
       </MainSection>
-      <MapSection />
+      <MapSection>
+        <Canvas>
+          <Suspense fallback={null}>
+            <MarauderMap />
+            <OrbitControls />
+          </Suspense>
+        </Canvas>
+      </MapSection>
     </MainGrid>
   );
 };

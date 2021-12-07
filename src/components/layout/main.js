@@ -19,7 +19,7 @@ export const initiaBlobityOptions = {
   fontWeight: 400,
   fontColor: '#ffffff',
   zIndex: 1,
-  size: 40,
+  size: 4,
   radius: 20,
 };
 
@@ -45,7 +45,6 @@ const Main = ({ children }) => {
     const blobityInstanceCurrent = blobityInstance.current;
     if (blobityInstanceCurrent) {
       blobityContext.set({ blobityInstance: blobityInstanceCurrent });
-      console.log(blobityContext);
     }
     return () => {
       blobityInstanceCurrent.destroy();
