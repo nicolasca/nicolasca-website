@@ -2,21 +2,9 @@ import * as THREE from 'three';
 
 var up = new THREE.Vector3(0, 0, 1);
 let position = 0;
+const NORMALIZED_PATH_LENGTH = 10;
 
 const FOOTSTEP_ANIMATION_TIME = 1;
-
-export const createPath = () => {
-  // the path
-  const path = new THREE.Path();
-  var arcRadius = 5;
-  // path.moveTo(0, 0 - arcRadius);
-  path.absarc(0, 0, arcRadius, -Math.PI * 2, Math.PI * 2, false);
-  // path.lineTo(3, 3);
-  // path.absarc(5, 5, -arcRadius, -Math.PI / 2, 0, false);
-  // path.lineTo(-5, -5);
-
-  return path;
-};
 
 export const drawPath = (path) => {
   var vertices = path.getSpacedPoints(20);
@@ -35,13 +23,13 @@ export const drawPath = (path) => {
 };
 
 export const move = (mesh, path, deltaTime, isLeft, nameMesh) => {
+  const adventOfPath = (path.getLength() * 0.0002) / NORMALIZED_PATH_LENGTH;
   // add up to position for movement
-  position += 0.0002;
+  position += adventOfPath;
 
   // If we finish the path (the position is outside 0-1), reset the position with the differial
   if (!path.getPointAt(position)) {
-    console.log(position);
-    position = position - 1 + 0.0002;
+    position = position - 1 + adventOfPath;
   }
   var point = path.getPointAt(position);
   var angle = getAngle(path, position);

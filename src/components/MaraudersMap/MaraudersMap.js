@@ -1,41 +1,22 @@
 // import "./style.css";
 import React, { useRef } from 'react';
-import { TextureLoader } from 'three';
+import * as THREE from 'three';
 import { useFrame, useLoader } from '@react-three/fiber';
 import { createPath, move } from './utils';
+import { Character } from './Character';
 
 const FOOTSTEP_ANIMATION_TIME = 1;
 
 export const MaraudersMap = () => {
-  const [footPrintLeft, footprintRight, hpName] = useLoader(TextureLoader, [
-    '/images/marauder-map/footprint-left.png',
-    '/images/marauder-map/footprint-right.png',
-    '/images/marauder-map/harry-potter-name.png',
-  ]);
+  const arcRadius = 5;
 
-  const hpNameRef = useRef(null);
-  const footLeftRef = useRef(null);
-  const footRightRef = useRef(null);
-  const groupRef = useRef(null);
+  const hpPath = new THREE.Path();
+  hpPath.absarc(0, 0, arcRadius, -Math.PI * 2, Math.PI * 2, false);
 
-  let previousTime = 0;
-
-  const path = createPath();
-  // const line = drawPath(path);
-
-  useFrame(({ clock }) => {
-    const elapsedTime = clock.getElapsedTime();
-    const deltaTime = Math.abs(elapsedTime - previousTime);
-    if (previousTime === 0) {
-      footLeftRef.current.currentTimeAnimation = FOOTSTEP_ANIMATION_TIME;
-      footRightRef.current.currentTimeAnimation = 0;
-    }
-
-    previousTime = elapsedTime;
-
-    move(footLeftRef.current, path, deltaTime, true, hpNameRef.current);
-    move(footRightRef.current, path, deltaTime, false, hpNameRef.current);
-  });
+  const grangerPath = new THREE.Path();
+  grangerPath.lineTo(0, 0.8);
+  grangerPath.quadraticCurveTo(0, 1, 0.2, 1);
+  grangerPath.lineTo(1, 1);
 
   return (
     <>
@@ -43,20 +24,12 @@ export const MaraudersMap = () => {
       <ambientLight intensity={0.2} />
       <directionalLight />
       {/* <primitive object={line} /> */}
-      <group ref={groupRef}>
-        <mesh ref={hpNameRef}>
-          <planeGeometry args={[2.5, 1]} />
-          <meshStandardMaterial map={hpName} transparent={true} />
-        </mesh>
-        <mesh ref={footLeftRef} isAppearing={false}>
-          <planeGeometry args={[0.5, 1]} />
-          <meshStandardMaterial map={footPrintLeft} transparent={true} />
-        </mesh>
-        <mesh ref={footRightRef} isAppearing={false}>
-          <planeGeometry args={[0.5, 1]} />
-          <meshStandardMaterial map={footprintRight} transparent={true} />
-        </mesh>
-      </group>
+      <Character characterName={'harry-potter'} path={hpPath} ratioName={2.5} />
+      <Character
+        characterName={'hermione-granger'}
+        path={grangerPath}
+        ratioName={5.8}
+      />
     </>
   );
 };
