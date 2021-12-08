@@ -3,7 +3,7 @@ import { FormattedMessage, Link } from 'gatsby-plugin-intl';
 import styled from 'styled-components/macro';
 import FaceSVG from '../components/AnimatedSVG/FaceSVG';
 import JapanSVG from '../components/AnimatedSVG/JapanSVG';
-import { MarauderMap } from '../components/MarauderMap';
+import { MaraudersMap } from '../components/MaraudersMap/MaraudersMap';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 
@@ -13,7 +13,7 @@ const MainGrid = styled.div`
   min-height: 100%;
 
   display: grid;
-  grid-template-columns: 200px auto 300px;
+  grid-template-columns: 200px auto 600px;
   grid-template-rows: auto 300px;
 `;
 
@@ -32,7 +32,9 @@ const ResumeSection = styled(Section)`
   align-items: center;
 `;
 const MainSection = styled(Section)``;
-const MapSection = styled(Section)``;
+const MapSection = styled(Section)`
+  padding: 0;
+`;
 
 const HomePage = () => {
   return (
@@ -48,7 +50,7 @@ const HomePage = () => {
       <MapSection>
         <Canvas>
           <Suspense fallback={null}>
-            <MarauderMap />
+            <MaraudersMap />
             <OrbitControls />
           </Suspense>
         </Canvas>
