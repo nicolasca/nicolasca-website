@@ -3,7 +3,7 @@ import { useIntl } from "gatsby-plugin-intl"
 import styled from "styled-components"
 import Seo from "../../components/seo"
 import { BlobityContext } from "../../utils/blobity.context"
-import HogwartsExpress from "../../components/hogwarts-express/hogwarts-express"
+import HogwartsExpress from "../../components/HogwartsExpress"
 import { defaultTheme, harryPotterTheme } from "../../styles/Theme"
 
 const Main = styled.div`
@@ -27,14 +27,14 @@ const HarryPotterPage = () => {
 
     blobityInstance.updateOptions({
       size: 50,
-      invert: true
+      invert: true,
     })
     blobityContext.set({ blobityInstance: blobityInstance })
     blobityContext.set({
       theme: {
         backgroudColor: "black",
-        fontColor: "white"
-      }
+        fontColor: "white",
+      },
     })
 
     // Change theme to harry potter
@@ -53,7 +53,7 @@ const HarryPotterPage = () => {
         size: 10,
         color: "#22A7F0",
         dotColor: "#000000",
-        invert: false
+        invert: false,
       })
       blobityContext.set({ blobityInstance: blobityInstance })
       documentSelector.style.setProperty(

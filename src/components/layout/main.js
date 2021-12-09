@@ -1,27 +1,27 @@
-import React, { useEffect, useContext } from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import useBlobity from "blobity/lib/useBlobity"
-import { BlobityContext } from "../../utils/blobity.context"
-import { colors } from "../../styles/Theme"
+import React, { useEffect, useContext } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import useBlobity from 'blobity/lib/useBlobity';
+import { BlobityContext } from '../../utils/blobity.context';
+import { colors } from '../../styles/Theme';
 
 export const initiaBlobityOptions = {
-  licenseKey: "gmrchk",
+  licenseKey: 'gmrchk',
   focusableElementsOffsetX: 5,
   focusableElementsOffsetY: 5,
   color: colors.red,
-  dotColor: "black",
-  invert: false,
-  focusableElements: "[data-blobity]",
+  dotColor: 'black',
+  invert: true,
+  focusableElements: '[data-blobity]',
+  magnetic: false,
   font: "'Montserrat','Source Sans Pro',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif",
   fontSize: 14,
   fontWeight: 400,
-  opacity: 0.7,
-  fontColor: "#ffffff",
+  fontColor: '#ffffff',
   zIndex: 1,
-  size: 10,
-  radius: 4,
-}
+  size: 4,
+  radius: 20,
+};
 
 const MainContainer = styled.main`
   display: flex;
@@ -35,28 +35,27 @@ const MainContainer = styled.main`
     padding-top: 3rem;
     height: 100vh;
   }
-`
+`;
 
 const Main = ({ children }) => {
-  const blobityInstance = useBlobity(initiaBlobityOptions)
-  const blobityContext = useContext(BlobityContext)
+  const blobityInstance = useBlobity(initiaBlobityOptions);
+  const blobityContext = useContext(BlobityContext);
 
   useEffect(() => {
-    const blobityInstanceCurrent = blobityInstance.current
+    const blobityInstanceCurrent = blobityInstance.current;
     if (blobityInstanceCurrent) {
-      blobityContext.set({ blobityInstance: blobityInstanceCurrent })
-      console.log(blobityContext)
+      blobityContext.set({ blobityInstance: blobityInstanceCurrent });
     }
     return () => {
-      blobityInstanceCurrent.destroy()
-    }
-  }, [blobityInstance, blobityContext.set])
+      blobityInstanceCurrent.destroy();
+    };
+  }, [blobityInstance, blobityContext.set]);
 
-  return <MainContainer id="page-wrap">{children}</MainContainer>
-}
+  return <MainContainer id="page-wrap">{children}</MainContainer>;
+};
 
 Main.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Main
+export default Main;

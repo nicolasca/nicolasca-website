@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import "./solar-system.css"
+import "./SolarSystem.css"
 import Rocket from "../../images/rocket.svg"
 
 const SolarSystem = () => {
