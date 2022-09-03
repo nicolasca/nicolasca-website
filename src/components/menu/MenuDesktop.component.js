@@ -16,7 +16,7 @@ export const MenuDesktop = () => {
   const Header = styled.header`
     display: flex;
     align-items: center;
-    height: 100%;
+    height: 70px;
     justify-content: space-between;
     padding: 0.5rem 1rem;
 

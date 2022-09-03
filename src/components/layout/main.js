@@ -45,7 +45,6 @@ const Main = ({ children }) => {
     const blobityInstanceCurrent = blobityInstance.current
     if (blobityInstanceCurrent) {
       blobityContext.set({ blobityInstance: blobityInstanceCurrent })
-      console.log(blobityContext)
     }
     return () => {
       blobityInstanceCurrent.destroy()
