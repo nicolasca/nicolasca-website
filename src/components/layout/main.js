@@ -27,7 +27,9 @@ const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(100vh - #{var(--header-height)});
+  /* height: calc(100vh - #{var(--header-height)}); */
+  height: calc(100vh - 70px);
+  /* height: 100vh; */
 
   // Mobile display
   @media screen and (max-width: 768px) {
@@ -45,7 +47,6 @@ const Main = ({ children }) => {
     const blobityInstanceCurrent = blobityInstance.current
     if (blobityInstanceCurrent) {
       blobityContext.set({ blobityInstance: blobityInstanceCurrent })
-      console.log(blobityContext)
     }
     return () => {
       blobityInstanceCurrent.destroy()

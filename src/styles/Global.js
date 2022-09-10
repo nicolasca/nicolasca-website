@@ -40,13 +40,13 @@ const GlobalStyle = createGlobalStyle`
     7. Remove built-in form typography styles
     */
     input, button, textarea, select {
-    font: inherit;
+      font: inherit;
     }
     /*
     8. Avoid text overflows
     */
     p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
+      overflow-wrap: break-word;
     }
     /*
     9. Create a root stacking context
@@ -72,6 +72,11 @@ const GlobalStyle = createGlobalStyle`
         font-family: "Recursive", "monospace", "Open Sans Regular";
         color: var(--textColor);
     }
+
+    p, h1, h2, h3, h4, h5, h6 {
+      font-family: "Recursive", "monospace", "Open Sans Regular";
+    }
+
 
     
 `
