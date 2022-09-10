@@ -1,23 +1,7 @@
 import React from "react"
 import { useIntl } from "gatsby-plugin-intl"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import Icon from "../images/nicolas.svg"
-// import Computer from "../images/home/computer-old.png"
-import { StaticImage } from "gatsby-plugin-image"
-import { colors } from "../styles/Theme"
-import { useState } from "react"
-
-const Section = styled.section`
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  background-color: white;
-`
-
-const FaceContainer = styled.div`
-  width: 40%;
-  flex-shrink: 0;
-`
 
 const Skills = styled.div`
   display: none;
@@ -43,24 +27,6 @@ const Skills = styled.div`
       opacity: 1;
     }
   }
-`
-
-const Information = styled.div`
-  width: 60%;
-  transition: transform 0.5s ease-out;
-
-  ${props =>
-    props.expanded &&
-    css`
-      transform: translateY(-100%);
-
-      ${Skills} {
-        display: block;
-        animation-name: fadeIn;
-        animation-duration: 1s;
-        animation-fill-mode: forwards;
-      }
-    `}
 `
 
 const Scene = styled.div`
@@ -104,19 +70,6 @@ const Scene = styled.div`
   }
 `
 
-// const Title = styled.div`
-//   display: flex;
-//   align-items: center;
-
-//   &:hover {
-//     cursor: pointer;
-//   }
-// `
-
-const JobTitle = styled.h2`
-  color: blue;
-`
-
 const Face = styled(Icon)`
   margin-right: 1rem;
 
@@ -134,38 +87,27 @@ const Face = styled(Icon)`
 `
 
 const HomePage = () => {
-  const [expanded, setExpanded] = useState(false)
-
   const intl = useIntl()
   return (
-    <>
-      <Scene>
-        {/* <Title> */}
-        <FaceContainer>
-          <Face />
-        </FaceContainer>
-        <Information expanded={expanded}>
-          <h1>Nicolas Castejon</h1>
-          <JobTitle onClick={() => setExpanded(true)}>
+    <div className="container md:flex mx-auto items-center justify-center h-full">
+      <div className="w-1/2">
+        <Face />
+      </div>
+      <div className="w-1/2">
+        <h1 className="text-4xl p-2">Nicolas Castejon</h1>
+        <div className="p-2">
+          <span className="text-2xl text-blue-600 tracking-widest">
             {intl.formatMessage({ id: "frontendDev" })}
-          </JobTitle>
-
-          <Skills>
-            Core: Javascript, HTML/CSS JS: ReactJS For fun: Machine Learning
-            Expériences: Voir les projets
-          </Skills>
-        </Information>
-        {/* </Title> */}
-        {/* <StaticImage src="../images/home/computer-old.png" /> */}
-      </Scene>
-      {/* <Section2>
-        <StaticImage src="../images/home/skills.png" />
+          </span>
+        </div>
 
         <Skills>
-          <h2>Compétences</h2>
+          Core: Javascript, HTML/CSS JS: ReactJS For fun: Machine Learning
+          Expériences: Voir les projets
         </Skills>
-      </Section2> */}
-    </>
+      </div>
+      {/* </Title> */}
+    </div>
   )
 }
 
